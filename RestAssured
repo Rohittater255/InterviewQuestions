@@ -1,1 +1,16 @@
+################### API Related###################
+1) Response List
+https://restfulapi.net/http-status-codes/
 
+2) Put VS Patch vs POST
+
+3) what is idempotency in rest apis?
+
+4) Authentication vs Authourization
+
+
+################### REST ASUUSRED ###################
+https://stackoverflow.com/questions/7360520/connectiontimeout-versus-sockettimeout
+
+
+JsonPath: https://www.youtube.com/watch?v=WE_gOHDiVJU 
