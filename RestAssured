@@ -10,7 +10,18 @@ https://restfulapi.net/http-status-codes/
 
 5) Serialization vs derialization
 
+
 ################### REST ASUUSRED ###################
+1) SSL
+a)By Pass SSL: 
+RestAssured.useRelaxedHTTPSValidation();
+
+b) Use SSL
+RestAssured.config = RestAssured.config().sslConfig(new SSLConfig()
+    .keyStore("path/to/keystore.jks", "password")
+    .trustStore("path/to/truststore.jks", "password"));
+
+
 https://stackoverflow.com/questions/7360520/connectiontimeout-versus-sockettimeout
 
 
