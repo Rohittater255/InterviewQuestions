@@ -1,0 +1,60 @@
+1) Interface Vs  Abstract Class
+a) Multiple Inheritance supported in Interface
+b) Interface used for common functionality Across Unrelated Classes   |  Abstract class is used for common functionality Across Related Classes
+c) Interface can only have public final variables
+
+2) RunTime Polymorphism vs Compile time polymorphism
+-  RunTime Polymorphism is method overriding 
+ & Compiletime polymorphism is method overloading
+
+3)Can I override constructor/static method/main method/abstract method
+a) Constructors cannot be overridden.
+b) static method  cannot be overridden.
+c)  main   method  cannot be overridden.
+d) abstract  method must be be overridden.
+
+4)Can I overload constructor/static method/main method/abstract method
+a) Constructors can  be overridden.
+b) static method  can be overridden.
+c)  main   method  can be overridden.
+d) abstract  method cannot   be be overridden.
+
+5)Comparator vs comparable
+- Comparator is used to comp
+- For Comparable we will need to implement 
+
+6) Upcasting vs downcasting
+
+7) Why we use String[] arg in main method? Why String[] not int[]?
+
+8) What will be results of below
+System.out.println(10+10+"The String");
+System.out.println("The String"+10+10);
+
+9) Pojo Class:They typically have private fields with public getter and setter methods.
+
+10) Memory Management: https://www.youtube.com/watch?v=4yKxJjYXZ0A 
+a) Speed: Which is faster- Stack is faster  
+b) Size: which have more memory- Heap is faster  
+c) where is memory allocated for local variables, class methods, object ? - Stack  
+d) where is memory allocated for instance variables of each object ? - Stack 
+e) where is memory allocated for   static variables  and static methods--> metaspace  
+f) is metaspace part of heap--no
+
+11) Memory Managemnent: What is garbage collector? where is it? Garbage collector destroy objects which have The garbage collector automatically identifies and frees up memory that is no longer being used by the program. This contrasts with manual memory management, where the programmer must explicitly allocate and deallocate memory.
+
+12) what is String pool?
+String s1 = "Java";  
+String s2 = "Java";  
+String s3 = new String("Java");  
+String s4 = new String("Java").intern();  
+System.out.println((s1 == s2)+", String are equal."); // true 
+System.out.println((s1 == s3)+", String are not equal."); // false
+System.out.println((s1 == s4)+", String are equal."); // true 
+
+13) keywords
+a) this vs super 
+b) private, default, public, protected
+c) volatile
+
+14) SingleTon Class
