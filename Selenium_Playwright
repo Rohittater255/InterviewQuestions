@@ -1,0 +1,25 @@
+1. ) How to handle ShadowRoot
+
+Selenium:
+JavascriptExecutor js = (JavascriptExecutor)browserDriver;
+WebElement el = (WebElement) js.executeScript("return ");
+
+String js2 ="arguments[0].setAttribute('value','aa')";
+((JavascriptExecutor)browserDriver).executeScript(js2);
+
+((JavascriptExecutor)browserDriver).executeScript("argument[0].click(),"zpath")"");
+
+
+b) Playwright:
+i)  Get Attribute:
+String href2 = newPage.locator("downloads-manager").locator("div#mainContainer").locator("downloads-item").locator("#file-link").getAttribute("href");
+ii) Enter Text:
+newPage.locator("downloads-manager").locator("downloads-toolbar").locator("cr-toolbar").locator("cr-toolbar-search-field").locator("#searchInput").fill("I am Groot");
+iii) Click
+newPage.locator("downloads-manager").locator("downloads-toolbar").locator("cr-toolbar").locator("cr-toolbar-search-field").locator("#searchInput").click();
+
+2) How to handle Iframe
+
+3) Types Of Wait
+
+4) Ways to click on element
