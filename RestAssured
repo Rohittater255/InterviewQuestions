@@ -1,4 +1,4 @@
-################### API Related###################
+ali################### API Related###################
 1) Response List
 https://restfulapi.net/http-status-codes/
 
@@ -8,6 +8,7 @@ https://restfulapi.net/http-status-codes/
 
 4) Authentication vs Authourization
 
+5) Serialization vs derialization
 
 ################### REST ASUUSRED ###################
 https://stackoverflow.com/questions/7360520/connectiontimeout-versus-sockettimeout
