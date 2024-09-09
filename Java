@@ -56,5 +56,8 @@ System.out.println((s1 == s4)+", String are equal."); // true 
 a) this vs super 
 b) private, default, public, protected
 c) volatile
+d ) synchronized : The synchronized keyword in Java is used to control access to a block of code or method by multiple threads. 
+It ensures that only one thread can execute the synchronized code at a time, preventing race conditions and ensuring thread safety. 
+
 
 14) SingleTon Class
