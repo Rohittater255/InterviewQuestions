@@ -1,0 +1,52 @@
+1)  Basics Selenium Functions
+  a) Types Of Wait
+  b) driver.get() vs driver.navigate()
+  c) driver.close() vs driver.quit()
+  c) driver.findElement() vs driver.findElements()
+  c) What is return type of driver.findElements()
+  d) driver.findElement("").click() vs driver.findElement("").submit()
+  e) how to maximize windows
+  f) how to run with selenium in remote mode(with Selenioum grid)
+
+2) Different Ways to perform click on Element
+
+3) Enter Text in element
+
+4) Alerts
+  a) how to accept alert
+  b) how to dismiss alert
+  c) how to send text in alert
+  d) how to get text in alert
+
+5) Pop-up
+  a) how to handle pop-up window
+  b) how to switch to child pop-up window
+  c) how to switch to main pop-up window
+  d) how to switch to get number of pop-up window currently opened
+  d) return type of driver.getWindowHandles() & driver.getWindowHandle()
+
+6) Iframe
+  a) how to get number of Iframe/frame
+
+6) Notification
+  a) how to handle notification
+
+7) Location Notification
+  a) how to handle notification
+
+8 ) How to handle ShadowRoot Element
+
+Selenium:
+JavascriptExecutor js = (JavascriptExecutor)browserDriver;
+WebElement el = (WebElement) js.executeScript("return ");
+
+String js2 ="arguments[0].setAttribute('value','aa')";
+((JavascriptExecutor)browserDriver).executeScript(js2);
+
+((JavascriptExecutor)browserDriver).executeScript("argument[0].click(),"zpath")"");
+
+2) How to handle Iframe
+
+3) Types Of Wait
+
+4) Ways to click on element
