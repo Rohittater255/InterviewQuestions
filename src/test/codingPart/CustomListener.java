@@ -1,4 +1,4 @@
-package test.interviewQuestions;
+package test.codingPart;
 
 import org.testng.IAnnotationTransformer;
 import org.testng.IReporter;
@@ -6,7 +6,7 @@ import org.testng.ISuite;
 import org.testng.ITestResult;
 import org.testng.annotations.ITestAnnotation;
 import org.testng.xml.XmlSuite;
-import test.interviewQuestions.testngQues.Retry;
+import test.codingPart.testngQues.Retry;
 
 import java.io.File;
 import java.io.FileWriter;

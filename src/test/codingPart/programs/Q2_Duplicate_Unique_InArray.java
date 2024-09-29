@@ -1,6 +1,5 @@
-package test.interviewQuestions.programs;
+package test.codingPart.programs;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.*;

@@ -1,11 +1,7 @@
-package test.interviewQuestions.testngQues;
+package test.codingPart.testngQues;
 
 import io.restassured.RestAssured;
 import io.restassured.config.HttpClientConfig;
-import io.restassured.config.RestAssuredConfig;
-import io.restassured.config.SSLConfig;
-import io.restassured.response.Response;
-import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 

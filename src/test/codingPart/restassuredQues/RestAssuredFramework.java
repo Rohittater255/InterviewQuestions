@@ -1,4 +1,4 @@
-package test.interviewQuestions.restassuredQues;
+package test.codingPart.restassuredQues;
 
 import io.restassured.RestAssured;
 import io.restassured.config.HttpClientConfig;

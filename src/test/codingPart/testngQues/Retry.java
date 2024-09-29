@@ -1,4 +1,4 @@
-package test.interviewQuestions.testngQues;
+package test.codingPart.testngQues;
 
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;

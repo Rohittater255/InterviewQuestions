@@ -1,3 +1,0 @@
-1) Print Values in Array
-int[] resultArr = new int[5];
-Arrays.toString(arr)
