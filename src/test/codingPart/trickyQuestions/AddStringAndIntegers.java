@@ -2,7 +2,7 @@ package test.codingPart.trickyQuestions;
 
 import org.testng.annotations.Test;
 
-public class Integers {
+public class AddStringAndIntegers {
 
     @Test
     public void sum_StringAndInteger() {

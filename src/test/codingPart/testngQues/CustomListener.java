@@ -1,4 +1,4 @@
-package test.codingPart;
+package test.codingPart.testngQues;
 
 import org.testng.IAnnotationTransformer;
 import org.testng.IReporter;

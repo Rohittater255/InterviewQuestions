@@ -7,7 +7,17 @@ import org.testng.annotations.Test;
 
 public class TestngBasics {
 
-    @Test
+
+    @Test( invocationCount = 5, successPercentage = 80)
+    public void sampleTest() {
+        System.out.println("Executing test...");
+        // Simulate a test that fails 20% of the time
+        if (Math.random() > 0.8) {
+            throw new RuntimeException("Test failed");
+        }
+    }
+
+    @Test()
     public void a() {
         String a = "a";
         System.out.println("a " + a);
