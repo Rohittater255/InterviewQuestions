@@ -23,7 +23,10 @@ d) abstract  method cannot   be be overridden.
 - Comparator is used to comp
 - For Comparable we will need to implement
 
-6) Upcasting vs downcasting
+
+6) What is difference between
+ - Serialization vs De-Serialization
+ - Autoboxing vs Unboxing
 
 7) Why we use String[] arg in main method? Why String[] not int[]?
 
@@ -42,24 +45,19 @@ c) volatile
 d ) synchronized : The synchronized keyword in Java is used to control access to a block of code or method by multiple threads. 
 It ensures that only one thread can execute the synchronized code at a time, preventing race conditions and ensuring thread safety. 
 
+11)  Upcasting vs downCasting
+   Upcasting
+   Example: Parent p = new Child();
+   Downcasting
+     // Trying to Downcasting Implicitly
+     // Child c = new Parent(); - > compile time error
 
-############# Memory Managemnent ############# 
-Refer https://www.youtube.com/watch?v=4yKxJjYXZ0A
+     // Downcasting Explicitly
+     Child c = (Child)p;
 
-1) Memory Management: 
- a) Speed: Which is faster- Stack is faster
- b) Size: which have more memory- Heap is faster
- c) where is memory allocated for local variables, class methods, reference variables? - Stack
- d) where is memory allocated for instance variables of each object ? - Stack
- e) where is memory allocated for static variables  and static methods--> metaspace
- f) is metaspace part of heap--no
+############# Strings #############
 
-1) What is garbage collector? 
-Garbage collector destroy objects which have The garbage collector automatically identifies and frees up memory that is no longer being used by the program. 
-This contrasts with manual memory management, where the programmer must explicitly allocate and deallocate memory.
-
-12) what is String pool?
-
+1) what is String pool?
 
 String s1 = "Java";
 String s2 = "Java";
@@ -69,5 +67,70 @@ System.out.println((s1 == s2)+", String are equal."); // true
 System.out.println((s1 == s3)+", String are not equal."); // false
 System.out.println((s1 == s4)+", String are equal."); // true
 
+2) Why is String Immutable
 
+
+############# Memory Management #############
+Refer https://www.youtube.com/watch?v=4yKxJjYXZ0A
+
+1) Memory Management: 
+ a) Speed: Which is faster- Stack is faster
+ b) Size: which have more memory- Heap is faster
+ c) is metaspace part of heap--no
+
+2) In Which Memory is below stored
+ a) local variables(primitive) - Stack
+   - Example: int a=5;
+ b) local variables(non-primitive) - Reference will stored in stack and value will be stored in heap
+   - Example: Integer a=5;
+ c) class methods - Metaspace
+ d) reference variables- Stack
+ e) instance variables? - Stack
+ f) where is memory allocated for instance variables of each object ? - Stack
+ g) static variables - Metaspace
+ h) static methods - Metaspace
+
+
+2) What is parts of Heap memory?
+The heap memory in Java is divided into several parts, each serving a specific purpose in memory management and garbage collection. Here are the main parts of the heap memory:
+    1. Young Generation
+    This is where all new objects are allocated. The young generation is further divided into three parts:
+
+        a)Eden Space: This is where new objects are initially allocated.
+        b)Survivor Space (S0 and S1): After surviving one or more garbage collection cycles in the Eden space, objects are moved to the survivor spaces. There are typically two survivor spaces, S0 and S1, which are used alternately.
+
+    2. Old Generation (Tenured Generation)
+    Objects that have survived multiple garbage collection cycles in the young generation are moved to the old generation. This space is used to store long-lived objects. Garbage collection in the old generation is less frequent but more time-consuming compared to the young generation.
+
+    3. Permanent Generation (Metaspace)
+    Prior to Java 8, the permanent generation (PermGen) was used to store metadata about classes and methods. Starting with Java 8, PermGen was replaced by Metaspace, which is not part of the heap but is still an important area for storing class metadata. Metaspace grows dynamically and is managed separately from the heap12.
+
+Example of Heap Memory Structure:
+Heap Memory
+├── Young Generation
+│   ├── Eden Space
+│   ├── Survivor Space S0
+│   └── Survivor Space S1
+├── Old Generation
+└── Metaspace (or Permanent Generation in Java 7 and earlier)
+
+
+3) What is garbage collector?
+Garbage collector destroy objects which have The garbage collector automatically identifies and frees up memory that is no longer being used by the program.
+This contrasts with manual memory management, where the programmer must explicitly allocate and deallocate memory.
+
+4) Garbage collector Algorithm to remove unused objects from heap?
+ Mark and sweep
+
+
+
+############# Design Pattern #############
 14) SingleTon Class
+
+
+
+############# Reflection #############
+
+1)What is java Reflection?
+Java reflection is an API that provides the ability to inspect
+and modify the runtime behavior of applications running in the Java Virtual Machine (JVM).
