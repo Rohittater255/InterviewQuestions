@@ -5,15 +5,19 @@ import io.restassured.response.Response;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.logging.LogEntry;
 import org.openqa.selenium.logging.LogType;
-import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import java.io.File;
+import java.io.IOException;
 import java.net.MalformedURLException;
-import java.net.URL;
+import java.nio.file.Files;
 import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -39,7 +43,7 @@ public class SeleniumFramework {
         //Remote:
 //        DesiredCapabilities capabilities = new DesiredCapabilities();//Depricated in selenium 4
 
-        RemoteWebDriver driver = new RemoteWebDriver(new URL(""), options);
+//        RemoteWebDriver driver = new RemoteWebDriver(new URL(""), options);
     }
 
     @AfterTest(alwaysRun = true)
@@ -51,8 +55,8 @@ public class SeleniumFramework {
         driver.quit();
     }
 
-    @Test
-    public void rt() throws  InterruptedException {
+    @Test(enabled = false)
+    public void openBrowser() throws InterruptedException, IOException {
 
         //navigate to webpage
         driver.get("https://www.amazon.in/");
@@ -74,9 +78,9 @@ public class SeleniumFramework {
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         System.out.println("URL: " + driver.getCurrentUrl());
-        System.out.println("Check text Enabled: " + driver.findElement(By.xpath("//a[text()='Amazon miniTV']")).isEnabled());
-        System.out.println("Check text Displayed: " + driver.findElement(By.xpath("//a[text()='Amazon miniTV']")).isDisplayed());
-        System.out.println("Check text Selected: " + driver.findElement(By.xpath("//a[text()='Amazon miniTV']")).isSelected());
+        System.out.println("Check text Enabled: " + driver.findElement(By.xpath("//a[text()='Mobiles']")).isEnabled());
+        System.out.println("Check text Displayed: " + driver.findElement(By.xpath("//a[text()='Mobiles']")).isDisplayed());
+        System.out.println("Check text Selected: " + driver.findElement(By.xpath("//a[text()='Mobiles']")).isSelected());
 
 //        WebDriverWait explicitWait = new WebDriverWait(driver, Duration.ofSeconds(10));
 //        explicitWait.until(ExpectedConditions.elementToBeSelected(driver.findElement(By.xpath("//a[text()='Amazon miniTV']"))));
@@ -128,12 +132,22 @@ public class SeleniumFramework {
         System.out.println("Text in Alert " + driver.switchTo().alert().getText());
         driver.switchTo().alert().accept();
 
+        //Take Screenshot
+        TakesScreenshot screenshot = (TakesScreenshot) driver;
+        File scrFile = screenshot.getScreenshotAs(OutputType.FILE);
+        System.out.println("Screenshot Created at local Folder path:- " + scrFile);
+        String screenshotDirectory = new File(System.getProperty("user.dir")).getAbsolutePath();
+        File destFile = new File(screenshotDirectory + "//" + "Rohit_" + System.currentTimeMillis() + "_" + ".png");
+        // Move the screenshot file to the destination
+        Files.move(scrFile.toPath(), destFile.toPath());
+        System.out.println("Screenshot saved to: " + destFile.getAbsolutePath());
+
         driver.switchTo().newWindow(WindowType.WINDOW);
         driver.get("chrome://downloads/");
-        JavascriptExecutor js = (JavascriptExecutor)driver;
+        JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("document.querySelector('downloads-manager').shadowRoot.querySelector('#toolbar').shadowRoot.querySelector('#toolbar').shadowRoot.querySelector('#search').shadowRoot.querySelector('#searchInput').click();");
         js.executeScript("document.querySelector('downloads-manager').shadowRoot.querySelector('#toolbar').shadowRoot.querySelector('#toolbar').shadowRoot.querySelector('#search').shadowRoot.querySelector('#searchInput').value='Rohit'");
-TimeUnit.SECONDS.sleep(10);
+        TimeUnit.SECONDS.sleep(10);
 
         //        //Declare and initialise a fluent wait
 //        FluentWait fluentWait = new FluentWait(driver);
@@ -142,5 +156,39 @@ TimeUnit.SECONDS.sleep(10);
 //        fluentWait.ignoring(NoSuchElementException.class);
 //        fluentWait.until(ExpectedConditions.alertIsPresent());
 
+    }
+
+    @Test
+    public void mouse() throws InterruptedException, IOException {
+
+        //navigate to webpage
+        driver.get("https://www.amazon.in/");
+        Actions action = new Actions(driver);
+
+//        action.moveToElement(driver.findElement(By.xpath("//a[text()=' Electronics ']"))).click().build().perform();
+        action.moveToElement(driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']"))).click().build().perform();
+        driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']")).sendKeys("Motorola Edge 50 Fusion 5G (Hot Pink, 12GB RAM, 256GB Storage)");
+        action.moveToElement(driver.findElement(By.xpath("//input[@id='nav-search-submit-button']"))).click().build().perform();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@data-component-type='s-search-results']//span[contains(text(),'Motorola Edge 50 Fusion 5G (Hot Pink, 12GB RAM, 256GB Storage)')]/ancestor::div[@data-cy='title-recipe']/following-sibling::div[@class='puisg-row']//span[@class='a-price-whole']")));
+        String text = driver.findElement(By.xpath("//span[@data-component-type='s-search-results']//span[contains(text(),'Motorola Edge 50 Fusion 5G (Hot Pink, 12GB RAM, 256GB Storage)')]/ancestor::div[@data-cy='title-recipe']/following-sibling::div[@class='puisg-row']//span[@class='a-price-whole']")).getText();
+        System.out.println("text: " + text);
+
+        //Right Click
+        action.moveToElement(driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']"))).contextClick().build().perform();
+
+        // Perform keyboard actions
+        action.keyDown(Keys.CONTROL).sendKeys("a")
+                .keyUp(Keys.CONTROL)
+                .perform();
+
+        action.keyDown(Keys.CONTROL).sendKeys("c")
+                .keyUp(Keys.CONTROL)
+                .perform();
+
+        action.keyDown(Keys.CONTROL).sendKeys("v")
+                .keyUp(Keys.CONTROL)
+                .perform();
+        TimeUnit.SECONDS.sleep(100);
     }
 }

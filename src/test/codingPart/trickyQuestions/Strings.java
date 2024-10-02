@@ -10,16 +10,16 @@ public class Strings {
         System.out.println("Before replace "+s);
 
         String a= s.replaceAll("[^a-zA-Z]","");
-        System.out.println("Replace Special Characters and number-->"+a);
+        System.out.println("Replace Special Characters and number: "+a);
 
         String b= s.replaceAll("[^a-zA-Z0-9]","");
-        System.out.println("Replace Special Characters but not numbers-->"+b);
+        System.out.println("Replace Special Characters but not numbers: "+b);
 
         String c= s.replaceAll("[^a-zA-Z0-9_ ]","");
-        System.out.println("Replace Special Characters but not numbers and space -->"+c);
+        System.out.println("Replace Special Characters but not numbers and space: "+c);
 
         String d= s.replaceAll("[^a-zA-Z0-9_._ ]","");
-        System.out.println("Replace Special Characters but not numbers, space and fullstop -->"+d);
+        System.out.println("Replace Special Characters but not numbers, space and fullstop: "+d);
     }
 
     @Test
@@ -31,16 +31,16 @@ public class Strings {
         boolean z;
 
         z= a.equalsIgnoreCase(b);
-        System.out.println("Z--> "+z);
+        System.out.println("Z: "+z);
 
         z=a.equals(b);
-        System.out.println("Z--> "+z);
+        System.out.println("Z: "+z);
 
         z=a.equals(c+d);
-        System.out.println("Z--> "+z);
+        System.out.println("Z: "+z);
 
         z=a==b;
-        System.out.println("Z--> "+z);
+        System.out.println("Z: "+z);
     }
 
     @Test
@@ -48,6 +48,6 @@ public class Strings {
         String k="23";
         int num=0;
         num=Integer.valueOf(k.substring(0,1));
-        System.out.println("num"+ num);
+        System.out.println("num: "+ num);
     }
 }

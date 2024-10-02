@@ -20,7 +20,7 @@ public class TestngBasics {
     @Test()
     public void a() {
         String a = "a";
-        System.out.println("a " + a);
+        System.out.println("I a " + a);
        // Assert.assertEquals(2,3);
     }
     @Test

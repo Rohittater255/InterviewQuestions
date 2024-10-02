@@ -45,10 +45,10 @@ c) volatile
 d ) synchronized : The synchronized keyword in Java is used to control access to a block of code or method by multiple threads. 
 It ensures that only one thread can execute the synchronized code at a time, preventing race conditions and ensuring thread safety. 
 
-11)  Upcasting vs downCasting
-   Upcasting
-   Example: Parent p = new Child();
-   Downcasting
+11)  Upcasting vs downCasting. [Refer https://media.geeksforgeeks.org/wp-content/uploads/20200506150009/Upcasting-Vs-Downcasting1.png]
+   a) Upcasting
+     Example: Parent p = new Child();
+   b) Downcasting
      // Trying to Downcasting Implicitly
      // Child c = new Parent(); - > compile time error
 
@@ -71,9 +71,11 @@ System.out.println((s1 == s4)+", String are equal."); // true
 
 
 ############# Memory Management #############
-Refer https://www.youtube.com/watch?v=4yKxJjYXZ0A
+Reference Videos
+- https://www.youtube.com/watch?v=4yKxJjYXZ0A
+- https://www.youtube.com/watch?v=vz6vSZRuS2M&t=939s
 
-1) Memory Management: 
+1) Memory Management:
  a) Speed: Which is faster- Stack is faster
  b) Size: which have more memory- Heap is faster
  c) is metaspace part of heap--no
@@ -87,8 +89,8 @@ Refer https://www.youtube.com/watch?v=4yKxJjYXZ0A
  d) reference variables- Stack
  e) instance variables? - Stack
  f) where is memory allocated for instance variables of each object ? - Stack
- g) static variables - Metaspace
- h) static methods - Metaspace
+ g) Static variables(Class Variables) - Metaspace
+ h) Static methods - Metaspace
 
 
 2) What is parts of Heap memory?
@@ -120,12 +122,28 @@ Garbage collector destroy objects which have The garbage collector automatically
 This contrasts with manual memory management, where the programmer must explicitly allocate and deallocate memory.
 
 4) Garbage collector Algorithm to remove unused objects from heap?
- Mark and sweep
+  a)Mark and sweep
+  b)Mark-and-Compact
+  c)Copying (or Semi-Space) Collection
+  d) Generational Garbage Collection
 
+5) Types of Garbage collector?
+1) Serial Garbage Collector: Uses a single thread for garbage collection.
+2) Parallel Garbage Collector: Uses multiple threads to perform garbage collection.
+3) Concurrent Mark-Sweep (CMS) Garbage Collector: Aims to minimize pause times by performing most of the garbage collection concurrently with the application threads.
+4) Garbage-First (G1) Garbage Collector: Divides the heap into regions and prioritizes garbage collection in regions with the most garbage.
+5) Z Garbage Collector (ZGC): A low-latency garbage collector that aims to keep pause times below 10ms.
+6) Epsilon Garbage Collector: A no-op garbage collector that handles memory allocation but does not reclaim any memory.
 
+############# Multi Threading #############
+Reference Video: https://www.youtube.com/watch?v=TpYIcJN9EV8
+
+1) Difference between process and thread
+Process is instance of program that is being executed.
+Thread is the smallest set of instruction that is be executed by CPU
 
 ############# Design Pattern #############
-14) SingleTon Class
+1) SingleTon Class
 
 
 
