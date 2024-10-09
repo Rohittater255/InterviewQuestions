@@ -1,4 +1,4 @@
-package test.codingPart.testngQues;
+package codingPart.testngQues;
 
 import io.restassured.RestAssured;
 import io.restassured.config.HttpClientConfig;
@@ -9,7 +9,7 @@ public class TestngBasics {
 
 
     @Test( invocationCount = 5, successPercentage = 80)
-    public void sampleTest() {
+    public void successPercentageAndInvocationCount() {
         System.out.println("Executing test...");
         // Simulate a test that fails 20% of the time
         if (Math.random() > 0.8) {
@@ -17,6 +17,12 @@ public class TestngBasics {
         }
     }
 
+    @Test( expectedExceptions= NoClassDefFoundError.class)
+    public void noClassDefFoundError() {
+        System.out.println("As there was no exception, The test fails");
+    }
+
+    //2 methods with same name,
     @Test()
     public void a() {
         String a = "a";
@@ -30,7 +36,9 @@ public class TestngBasics {
         // Assert.assertEquals(2,3);
     }
 
-    @Test(priority = 1, dependsOnMethods = "a", dataProvider = "testData")
+
+    //Data Provider
+    @Test( dataProvider = "testData")
     public void b(String data,String data2, String data3) {
         System.out.println("data " + data);
         System.out.println("data2 " + data2);
