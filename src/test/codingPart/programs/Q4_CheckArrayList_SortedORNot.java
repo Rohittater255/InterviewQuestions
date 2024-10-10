@@ -9,7 +9,7 @@ import java.util.Collections;
 public class Q4_CheckArrayList_SortedORNot {
 
     @Test
-    public void a(){
+    public void checkSortedArray(){
         ArrayList<String> arr = new ArrayList<>();
         arr.add("Rohit");
         arr.add("Rahul");

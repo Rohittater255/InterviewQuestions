@@ -1,61 +1,59 @@
-package test.codingPart.programs;
+package codingPart.programs;
 
 import org.testng.annotations.Test;
-
-import java.util.HashSet;
 
 public class LongestSubstring {
 
     @Test
-    public void rt() {
-        String s = "abcabcbb";
-        int n = s.length();
-        int result = 0;
-        HashSet<Character> set = new HashSet<>();
-        int i = 0, j = 0;
+    public void longestSubstring() {
+        String str = "abcdcbasbf";
+        String sub = "";
+        String longestSub = "";
 
-        while (i < n && j < n) {
-            System.out.println("Running for i=" + i + " and j=" + j);
-            // Try to extend the range [i, j]
-            if (!set.contains(s.charAt(j))) {
-                System.out.println("Adding in Set:- " + s.charAt(j++));
-                set.add(s.charAt(j++));
+        for (int i = 0; i < str.length(); i++) {
+            for (int j = str.length(); j > i + 1; j--) {
+                sub = str.substring(i, j);
+                //System.out.println("For i=" + i + " and for j=" + j + " the value of sub=" + sub);
+                //System.out.println("For sub=" + sub + " palindrome=" + isPalindrome(sub));
 
-                System.out.println("Checking what is max " + result + " or " + (j - i));
-                result = Math.max(result, j - i);
-            } else {
-                System.out.println("Removing- " + s.charAt(i++));
-                set.remove(s.charAt(i++));
+                //Checking Plaindrome
+                if (isPalindrome(sub) && sub.length() > longestSub.length()) {
+                    longestSub = sub;
+                    break;
+                }
             }
         }
-        System.out.println("FInal Result " + result);
+        System.out.println("Longest  palindrome subtring=" + longestSub);
+
+
     }
 
-    public int returnWithConditions() {
-        int a = 5;
-        int b = 6;
-        return a > b ? a : b;
-    }
+//    public boolean isPalindrome(String str) {
+//        String rev = "";
+//        for (int i = str.length() - 1; i >= 0; i--) {
+//            rev = rev + str.charAt(i);
+//        }
+//        //System.out.println("Original=" + str + " and Rev=" + rev);
+//
+//        if (str.equalsIgnoreCase(rev)) {
+//            return true;
+//        } else {
+//            return false;
+//        }
+//    }
 
-    @Test
-    public void fibbonaci() {
-        int n = 7;
-        int a = 0;
-        int b = 1;
-        int result = 0;
-        if (n == 0) {
-            result = 0;
-        } else if (n == 1) {
-            result = 1;
-        } else {
-            for (int i = 2; i <= n; i++) {
-                result = a + b;
-                a = b;
-                b = result;
-                System.out.println("For n=" +i + " the result=" + result);
+    public boolean isPalindrome(String str) {
+        int left = 0;
+        int right = str.length() - 1;
+
+        while (left < right) {
+            if (str.charAt(left) != str.charAt(right)) {
+                return false;
             }
+            left++;
+            right--;
         }
-        System.out.println("For n=" + n + " the result=" + result);
-    }
+        return true;
 
+    }
 }

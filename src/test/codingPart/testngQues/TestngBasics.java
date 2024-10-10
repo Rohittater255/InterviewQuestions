@@ -22,7 +22,7 @@ public class TestngBasics {
         System.out.println("As there was no exception, The test fails");
     }
 
-    //2 methods with same name,
+    //2 methods with same name, capital A will run first
     @Test()
     public void a() {
         String a = "a";
@@ -59,9 +59,6 @@ public class TestngBasics {
         String a = "a";
 //        RestAssured.config().sslConfig(new SSLConfig().trustStore("").keyStore(""));
         // Customize connection and socket timeouts
-        RestAssured.config().httpClient(HttpClientConfig.httpClientConfig()
-                        .setParam("http.connection.timeout", 5000) // Connection timeout in milliseconds
-                        .setParam("http.socket.timeout", 10000));  // Socket timeout in milliseconds        Response response = RestAssured.given().when().get();
     }
 
 }

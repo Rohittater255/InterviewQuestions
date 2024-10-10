@@ -1,4 +1,4 @@
-package test.codingPart.programs.ComparatorAndComparable;
+package codingPart.programs.ComparatorAndComparable;
 
 import java.util.Comparator;
 

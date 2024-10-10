@@ -1,3 +1,14 @@
+######### Basics #########
+
+- How to run java file from cmd line
+  - Run javac YourFileName.java   //This will generate a .class file containing the bytecode.
+  - java YourFileName  //Use the java command to run the compiled Java program
+
+- Run java program with specific memory
+    java -Xms256m -Xmx1g YourFileName  //This will ensure that your Java program starts with 256 MB of heap memory and can use up to 1 GB of heap memory as needed
+
+
+
 1) Interface Vs  Abstract Class
 a) Multiple Inheritance supported in Interface
 b) Interface used for common functionality Across Unrelated Classes   |  Abstract class is used for common functionality Across Related Classes
@@ -5,7 +16,7 @@ c) Interface can only have public final variables
 
 2) RunTime Polymorphism vs Compile time polymorphism
 -  RunTime Polymorphism is method overriding 
- & Compiletime polymorphism is method overloading
+ & Compile time polymorphism is method overloading
 
 3)Can I override constructor/static-method/main-method/abstract-method
 a) Constructors cannot be overridden.

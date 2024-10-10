@@ -1,5 +1,4 @@
 1)  Basics Selenium
-  - Types Of Wait
   - Types of Locators
   - CSS Vs Xpath?? ..What is better?
   - driver.get() vs driver.navigate()
@@ -12,17 +11,21 @@
   - how to run with selenium in remote mode(with Selenium grid)
   - What is latest version of selenium/selenium-grid. What are the changes in the latest version?
 
-2) Different Ways to perform click on Element
+2)  Wait
+   -  Types Of Wait
+   - What is default pollingtime in Explicit wait?
 
-3) Enter Text in element
+3) Different Ways to perform click on Element
 
-4) Alerts
+4) Enter Text in element
+
+5) Alerts
   - how to accept alert
   - how to dismiss alert
   - how to send text in alert
   - how to get text in alert
 
-5) Pop-up
+6) Pop-up
   - how to handle pop-up window
   - how to switch to child pop-up window
   - how to switch to main pop-up window

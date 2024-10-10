@@ -1,4 +1,4 @@
-package test.codingPart.programs.exceptionHandling;
+package codingPart.programs.exceptionHandling;
 
 public class MyCustomException extends Exception {
 

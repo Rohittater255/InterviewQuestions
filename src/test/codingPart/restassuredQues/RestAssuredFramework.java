@@ -1,4 +1,4 @@
-package test.codingPart.restassuredQues;
+package codingPart.restassuredQues;
 
 import io.restassured.RestAssured;
 import io.restassured.config.HttpClientConfig;
