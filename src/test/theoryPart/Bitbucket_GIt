@@ -1,0 +1,15 @@
+################### Bitbucket###################
+
+1) Diff between workspace, project and repository
+2) Move/Transfer Repo from one bitbucket account
+  In Bitbucket, Go To Repository Settings--> Manage repository-->Transfer Repository. Enter Workspace name and click on transfer
+  Refer https://www.youtube.com/watch?v=SS-jG0Ke3Dg
+
+################### GIT ###################
+
+
+- What is Diff between below
+   a) merge and rebase
+   b) merge commit and a squash merge
+   c) fetch and pull
+- What is cherrypick

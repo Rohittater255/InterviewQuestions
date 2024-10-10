@@ -1,0 +1,96 @@
+- What is Exception
+
+- Exception Class hierarchy
+  https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/07/exception-hierarchy.png
+
+- Difference between Exception and error
+
+- Difference between Compile Time exception(Checked exception) and Run Time Exception(unchecked Exception)
+
+- Difference between Throw vs throws
+
+- Difference between try-catch vs throws
+
+- Difference between final, finally and finalize
+
+
+- Is below allowed?
+    - 1 Try block with multiple catch block? ---> Yes
+    - 1 Try block with multiple finally block? ---> No
+    - Try block with no catch block and no finally block? --->  No
+    - Try block with no catch and 1 finally block? --->Yes
+
+
+- Suppose there is try-ctach block and finally block. Will Fically block be executed in below scenario?
+    Try block with return and then finally--> Yes
+    Try block with System.exit()--> NO
+
+
+Code in try block can throw some exception, can you handle it with try-finally block?--> Yes
+
+
+########## Code  ###########
+
+1) What is result of below
+
+try{
+    System.exit(0);
+}
+catch(Exception e){
+    System.out.println("Generic Catch Statement");
+}
+finally{
+    System.out.println("Generic Finally Statement");
+}
+
+### Answer ###:
+The code will stopped in try statement.
+Nothing from catch/finally block will be printed
+
+2) What is result of below
+
+try {
+    return;
+} catch (Exception e) {
+    System.out.println("Generic Catch Statement");
+} finally {
+    System.out.println("Generic Finally Statement");
+}
+
+
+###### Answer ###:
+Generic Finally Statement
+
+
+3) What is result of below
+
+try {
+    throw new RuntimeException();
+} finally {
+    System.out.println("Finally Block");
+}
+
+
+###### Answer ###:
+Finally Block
+
+
+4) What is result of below
+
+    public void test() {
+        try {
+            throw new NullPointerException();
+        } catch (NullPointerException e) {
+            throw new RuntimeException();
+        } catch (RuntimeException e) {
+            System.out.println("RuntimeException Caught");
+        } finally {
+            System.out.println("Finally Block");
+        }
+    }
+
+###### Answer ###:
+ Java only allows one catch block for each exception thrown. The output will be:
+
+
+ Finally Block
