@@ -1,0 +1,57 @@
+-- ACID Properties
+- Difference between Delete , Truncate and drop
+
+
+
+
+######## Cricketer Table ########
+
+Id  | FirstName | LastName  | PlayerOfMatch  | Type
+1   | Rohit     | Sharma    | 31             | Batting
+2   | Virat     | Kholi     | 10             | Batting
+3   | Yuvraj    | Singh     | 19             | All-Rounder
+4   | Jasprit   | Bumrah    | 16             | Bowling
+
+
+1) Concat
+SELECT CONCAT(FirstName, ' ', LastName) AS Full_Name
+FROM cricketer;
+
+
+### Result  ###
+Full_Name
+----------
+Rohit Sharma
+Virat Kohli
+Yuvraj Singh
+Jasprit Bumrah
+
+
+
+2) Where clause
+select *
+from cricketer
+where PlayerOfMatch>15 and PlayerOfMatch<20;
+
+
+3) Insert query to add Sourav Ganguly and sachin Tendulkar
+INSERT INTO cricketer (Id, FirstName, LastName, PlayerOfMatch, Type)
+VALUES (5, 'Sourav', 'Ganguly', 21, 'Batting');
+
+INSERT INTO cricketer (Id, FirstName, LastName, PlayerOfMatch, Type)
+VALUES (6, 'Sachin', 'Tendulkar', 62, 'Batting');
+
+
+
+3) Delete query to delete Yuvraj Singh
+
+DELETE FROM cricketer
+WHERE FirstName = 'Yuvraj' AND LastName = 'Singh';
+
+
+4) Truncate query to truncate all cricketers from cricket table
+TRUNCATE TABLE cricketer;
+
+
+5) Drop query
+DROP TABLE cricketer;

@@ -1,0 +1,11 @@
+1) What is TestNg Framework
+2) How to run classes/tests in parallel?
+3) How to run same testCase 100 times-->invocatiocounter=04) 
+4 Test cases having priority---> 1,2,-1,-2.5,
+5) Can Test Case Priority be set to String? If not then what will be error?
+6) Test Method Sequence--> @BeforeSuite, @BeforeTest, @BeforeClass, @BeforeMethod, @Test,  @AfterMethod,  @AfterClass, @AfterTest, @AfterSuite,
+7) what is dependsonGroup
+8) How to disable a Test
+9) Retry Mechanism
+10) Re-Run failed Test cases
+11) What is diff between soft assertions and hard assertions

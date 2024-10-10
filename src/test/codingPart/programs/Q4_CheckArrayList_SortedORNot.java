@@ -1,4 +1,4 @@
-package programs;
+package codingPart.programs;
 
 import org.testng.annotations.Test;
 

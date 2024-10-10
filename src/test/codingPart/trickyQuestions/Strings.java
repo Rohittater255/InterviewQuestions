@@ -1,4 +1,4 @@
-package test.codingPart.trickyQuestions;
+package codingPart.trickyQuestions;
 
 import org.testng.annotations.Test;
 

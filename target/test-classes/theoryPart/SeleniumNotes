@@ -1,0 +1,76 @@
+1)  Basics Selenium
+  - Types of Locators
+  - CSS Vs Xpath?? ..What is better?
+  - driver.get() vs driver.navigate()
+  - driver.close() vs driver.quit()
+  - driver.findElement() vs driver.findElements()
+  - What is return type of driver.findElements()
+  - driver.findElement("").click() vs driver.findElement("").submit()
+  - how to maximize window in selenium
+  - how to take screenshot?
+  - how to run with selenium in remote mode(with Selenium grid)
+  - What is latest version of selenium/selenium-grid. What are the changes in the latest version?
+
+2)  Wait
+   -  Types Of Wait
+   - What is default pollingtime in Explicit wait?
+
+3) Different Ways to perform click on Element
+
+4) Enter Text in element
+
+5) Alerts
+  - how to accept alert
+  - how to dismiss alert
+  - how to send text in alert
+  - how to get text in alert
+
+6) Pop-up
+  - how to handle pop-up window
+  - how to switch to child pop-up window
+  - how to switch to main pop-up window
+  - how to switch to get number of pop-up window currently opened
+  - return type of driver.getWindowHandles() & driver.getWindowHandle()
+
+6) Select Class
+  - how to select value from dropdown?
+  - type of ways to select from dropdown
+
+7) Action Class
+  - how to perform right click from mouse in selenium?
+  - how to perform drag and drop?
+  - how to perform KeyBoard action like 'Ctrl+A'?
+
+8) Iframe
+  - how to get number of Iframe/frame
+
+9) Browser Extension
+  - how to handle/disable notification
+
+8) handle SSL Certificate
+  - how to bypass ssl certificate
+  - how to accept ssl certificate
+
+9) Notification
+  - how to handle/disable notification
+
+10) Location Notification
+  - how to handle notification
+
+11) Date Selector
+  - how to handle date selector
+
+
+
+
+12 ) How to handle ShadowRoot Element
+
+Selenium:
+JavascriptExecutor js = (JavascriptExecutor)browserDriver;
+WebElement el = (WebElement) js.executeScript("return ");
+
+String js2 ="arguments[0].setAttribute('value','aa')";
+((JavascriptExecutor)browserDriver).executeScript(js2);
+
+((JavascriptExecutor)browserDriver).executeScript("argument[0].click(),"zpath")"");
+
