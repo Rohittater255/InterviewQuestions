@@ -1,0 +1,13 @@
+1) How to know more info about any command like 'ls'
+man ls
+info ls
+
+2) I want to run some command in linux. But I forgot what exact command that was? What to do?
+apropos copy
+
+3) ls command
+how to ls -l
+
+Check Diskspace
+df -h
+df -h --total

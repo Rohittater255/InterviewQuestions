@@ -1,0 +1,14 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/cricketer/rohitSharma"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": {
+      "name": "Rohit Sharma",
+      "age": 34,
+      "Number of 100s": 35
+    }
+  }
+}

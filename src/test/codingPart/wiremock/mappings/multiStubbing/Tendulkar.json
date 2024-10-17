@@ -1,0 +1,58 @@
+{
+  "mappings": [
+    {
+      "request": {
+        "method": "GET",
+        "url": "/cricketer/tendulkar"
+      },
+      "response": {
+        "status": 200,
+        "jsonBody": {
+          "cricketers": [
+            {
+              "name": "Sachin Tendulkar",
+              "age": 50,
+              "Number of 100s": 100
+            },
+            {
+              "name": "Arjun Tendulkar",
+              "age": 20,
+              "Number of 100s": 0
+            }
+          ],
+          "description": "When we run GET /cricketer/Tendulkar API Request, the response will have information about Sachin Tendulkar And Arjun Tendulkar"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/cricketer/sachinTendulkar"
+      },
+      "response": {
+        "status": 200,
+        "jsonBody": {
+          "name": "Sachin Tendulkar",
+          "age": 50,
+          "Number of 100s": 100,
+          "description": "When we run GET /cricketer/sachinTendulkar API Request, the response will have information about Sachin Tendulkar"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/cricketer/arjunTendulkar"
+      },
+      "response": {
+        "status": 200,
+        "jsonBody": {
+          "name": "Sachin Tendulkar",
+          "age": 20,
+          "Number of 100s": 0,
+          "description": "When we run GET /cricketer/arjunTendulkar API Request, the response will have information about Arjun Tendulkar"
+        }
+      }
+    }
+  ]
+}

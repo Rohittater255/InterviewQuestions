@@ -49,7 +49,7 @@ public class memoryManagementExample {
     @Test
     public void typeOfReference() {
         // Create a reference to an object
-        MyObject reference = new MyObject("Onject Reference");
+        MyObject reference = new MyObject("Object Reference");
 
         // Print the object using the reference
         System.out.println("Reference: " + reference.name);

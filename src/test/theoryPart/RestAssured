@@ -1,28 +1,46 @@
 ali################### API Related###################
-1) Response List
-https://restfulapi.net/http-status-codes/
+1) Response Code List-->https://restfulapi.net/http-status-codes/
+    i) 401 vs 403?
+    ii) 405 vs 501?
+    iii) 503 vs 500?
 
 2) Put VS Patch vs POST
 
 3) what is idempotency in rest apis?
 
-4) Authentication vs Authourization
+4) Authentication vs Authorization
 
-5) Serialization vs derialization
+5) Serialization vs deserialization
 
 
-################### REST ASUUSRED ###################
+
+################### REST ASSURED ###################
 1) SSL
 a)By Pass SSL: 
-RestAssured.useRelaxedHTTPSValidation();
+        RestAssured.useRelaxedHTTPSValidation();
 
 b) Use SSL
-RestAssured.config = RestAssured.config().sslConfig(new SSLConfig()
-    .keyStore("path/to/keystore.jks", "password")
-    .trustStore("path/to/truststore.jks", "password"));
+        RestAssured.config().sslConfig(new SSLConfig()
+            .keyStore("path/to/keystore.jks", "password")
+            .trustStore("path/to/truststore.jks", "password"));
+
+c) Set connection/socket timeout
+        RestAssured.config().
+                httpClient(HttpClientConfig.httpClientConfig().
+                        setParam("http.socket.timeout", 1000).
+                        setParam("http.connection.timeout", 1000));
 
 
 https://stackoverflow.com/questions/7360520/connectiontimeout-versus-sockettimeout
 
+Connection timeout: A connection timeout is the maximum amount of time that the program is willing to wait
+to setup a connection to another process. You aren't getting or posting any application data
+at this point, just establishing the connection, itself.
+
+Socket timeout: A socket timeout is the timeout when waiting for individual packets.
+ It's a common misconception that a socket timeout is the timeout to receive the full response.
+ So if you have a socket timeout of 1 second, and a response comprised of 3 IP packets,
+  where each response packet takes 0.9 seconds to arrive, for a total response time of 2.7 seconds,
+   then there will be no timeout.
 
 JsonPath: https://www.youtube.com/watch?v=WE_gOHDiVJU 

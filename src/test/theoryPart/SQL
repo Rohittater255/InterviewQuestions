@@ -1,7 +1,13 @@
 -- ACID Properties
 - Difference between Delete , Truncate and drop
 
-
+######## Second Highest  salary ########
+SELECT Salary AS SecondHighestSalary
+FROM (
+    SELECT Salary, ROW_NUMBER() OVER (ORDER BY Salary DESC) AS row_num
+    FROM Employee
+)
+WHERE row_num = 2;
 
 
 ######## Cricketer Table ########

@@ -4,6 +4,13 @@
 2) Move/Transfer Repo from one bitbucket account
   In Bitbucket, Go To Repository Settings--> Manage repository-->Transfer Repository. Enter Workspace name and click on transfer
   Refer https://www.youtube.com/watch?v=SS-jG0Ke3Dg
+3) Handle merge conflict
+  - Take code from your branch--> git clone yorrepo...
+  - Rebase code from master branch--> git rebase origin/main
+  - Resolve the merge conflicts in IDE
+
+4) Handle merge conflict for large number of file
+
 
 ################### GIT ###################
 
@@ -12,4 +19,10 @@
    a) merge and rebase
    b) merge commit and a squash merge
    c) fetch and pull
-- What is cherrypick
+- Types of Merge in Bitbucket
+    In Bitbucket, there are several types of merge strategies you can use when integrating changes from one branch into another. Here are the main ones:
+        Merge Commit: This strategy creates a new merge commit in the target branch, preserving the history of all commits from the source branch. It’s useful for maintaining a detailed history of changes1.
+        Squash Merge: This combines all the commits from the source branch into a single commit before merging into the target branch. It helps keep the commit history clean and easy to follow1.
+        Fast-Forward Merge: This strategy moves the target branch tip forward to the source branch tip if there are no new commits in the target branch since the source branch was created. It results in a linear history1.
+        Rebase and Merge: This replays the commits from the source branch onto the target branch, creating a linear history without merge commits. It’s useful for keeping a clean project history2.
+        Rebase + Fast-Forward: This combines rebase and fast-forward strategies, ensuring a linear history without merge commits, provided there are no new commits in the target branch2.

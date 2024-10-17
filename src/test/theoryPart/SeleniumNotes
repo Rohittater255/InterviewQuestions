@@ -13,6 +13,7 @@
 
 2)  Wait
    -  Types Of Wait
+   - What is default time in Implicit wait?
    - What is default pollingtime in Explicit wait?
 
 3) Different Ways to perform click on Element
@@ -74,3 +75,11 @@ String js2 ="arguments[0].setAttribute('value','aa')";
 
 ((JavascriptExecutor)browserDriver).executeScript("argument[0].click(),"zpath")"");
 
+13 ) What is latest version of selenium and what are the new features added in new version
+
+14) Limitation of Selenium-->https://www.youtube.com/watch?v=sbswAkXXOFY&t=12s
+a)Captcha
+b)QR Code/Bar code
+c)Windows/Desktop/Mobile app
+d) Performance/Security/Load Tes
+e) Maps

@@ -1,0 +1,10 @@
+ - What is latency
+
+ The delay in network communication, or the time it takes for data to transfer
+  between points in a network. Latency is usually measured in milliseconds (ms).
+
+  - What is Throughput
+
+  The average amount of data that can pass through a network in a specific time period.
+  Throughput is usually measured in bits per second (bps), kilobits per second (Kbps),
+  megabits per second (Mbps), or gigabits per second (Gbps)

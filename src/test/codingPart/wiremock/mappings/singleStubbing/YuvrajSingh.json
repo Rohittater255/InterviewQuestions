@@ -1,0 +1,14 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/cricketer/yuvrajSingh"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": {
+      "name": "Yuvraj Singh",
+      "age": 40,
+      "Number of 100s": 40
+    }
+  }
+}

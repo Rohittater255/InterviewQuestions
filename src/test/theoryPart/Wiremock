@@ -1,0 +1,30 @@
+################### Wiremock ###################
+
+1) What is wiremock. Why and when we use it?
+
+2) Modes to run wiremock
+    i) Running as Jar (local Mode):
+        a) to run in local mode first download jar -->https://wiremock.org/docs/download-and-installation/
+        b) in cmd, run command--> java -jar wiremock-standalone-3.9.1.jar
+        c) in browser open link--> http://localhost:8080/__admin/mappings
+        d) In Postman--> Import new Curl Request--> Run below
+
+            curl --location 'http://localhost:8080/__admin/mappings' \
+            --header 'Content-Type: application/json' \
+            --data '{
+                "request": {
+                    "url": "/api/mytest",
+                    "method": "GET"
+                },
+                "response": {
+                    "status": 200,
+                    "body": "Here it is!\n"
+                }
+            }'
+
+
+       e) Go to Browser and verify mapping is created ( Url: http://localhost:8080/__admin/mappings)
+       f) Go to Browser and verify Get Request ( Url: http://localhost:8080/api/mytest)
+       g) Go to Browser and run invalid Request ( Url: http://localhost:8080/invalid)
+
+    ii) Running as Docker Image (remote mode):
