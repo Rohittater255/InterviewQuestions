@@ -1,0 +1,249 @@
+#!/usr/bin/env groovy
+def scmVars
+
+def mvnParams="-s configuration/maven/CI/settings.xml"
+
+def TEST_NG_XML_OCOH_MAT = "com/amdocs/core/oh/testng/ocoh_mat_APIGW_testng.xml"
+def TEST_NG_XML_OCOH_REGRESSION = "com/amdocs/core/oh/testng/ocoh_regression_APIGW_testng.xml"
+def TEST_NG_XML_REGRESSION = "com/amdocs/core/oh/testng/regression_testng.xml"
+def TEST_NG_XML_D1SUITE = "com/amdocs/core/oh/testng/d1MiniSuite_testng.xml"
+def TEST_NG_XML_CUSTOM = ""
+
+def TEST_BASE_PATH = "coreassembly/target"
+def TEST_REPORT_PATH = TEST_BASE_PATH + "/test-output"
+def TEST_REPORT_PATH_OCOH_MAT = TEST_REPORT_PATH + "/ocohmat"
+def TEST_REPORT_PATH_OCOH_REGRESSION = TEST_REPORT_PATH + "/ocohregression"
+def TEST_REPORT_PATH_REGRESSION = TEST_REPORT_PATH + "/regression"
+def TEST_REPORT_PATH_D1SUITE = TEST_REPORT_PATH + "/d1suite"
+def TEST_REPORT_PATH_CUSTOM = TEST_REPORT_PATH + "/custom"
+def TEST_REPORT_FILE_NAME = "custom-report.html"
+
+def TEST_EXPECTED_PASS_RATE_OCOH_MAT = "100.0"
+def TEST_EXPECTED_PASS_RATE_OCOH_REGRESSION = "100.0"
+def TEST_EXPECTED_PASS_RATE_REGRESSION = "100.0"
+def TEST_EXPECTED_PASS_RATE_D1SUITE = "0.0"
+def TEST_EXPECTED_PASS_RATE_CUSTOM = "0.0"
+
+def TEST_DRY_RUN_OCOH_MAT = "false"
+def TEST_DRY_RUN_OCOH_REGRESSION = "false"
+def TEST_DRY_RUN_REGRESSION = "true"
+def TEST_DRY_RUN_D1SUITE = "true"
+def TEST_DRY_RUN_CUSTOM = "false"
+
+def LABEL_OCOH_MAT = "OCOHMat"
+def LABEL_OCOH_REGRESSION = "OCOHRegression"
+def LABEL_REGRESSION = "Regression"
+def LABEL_D1SUITE = "D1Suite"
+def LABEL_CUSTOM_XML = "Custom xml"
+
+node("${env.JENKINS_NODE}")
+ {
+ stage('Cleanup')
+ {
+ deleteDir()
+ }
+
+ stage('Clone Sources')
+ {
+ scmVars = checkout scm
+ currentBuild.description = scmVars.GIT_LOCAL_BRANCH
+ }
+
+ stage('Build')
+ {
+ sh "mvn ${mvnParams} clean install"
+ }
+
+ stage ('Extract testing jar')
+ {
+ sh "cd ${TEST_BASE_PATH}; jar -xvf oh-e2e-test-scenarios-*-jar-with-dependencies.jar"
+ }
+
+ stage('Set TestNG parameters')
+ {
+ if (params.TEST_DRY_RUN_OCOH_MAT != null && params.TEST_DRY_RUN_OCOH_MAT){
+ TEST_DRY_RUN_OCOH_MAT = "true"
+ } else {
+ TEST_DRY_RUN_OCOH_MAT = "false"
+ }
+
+ if (params.TEST_DRY_RUN_OCOH_REGRESSION != null && params.TEST_DRY_RUN_OCOH_REGRESSION){
+ TEST_DRY_RUN_OCOH_REGRESSION = "true"
+ } else {
+ TEST_DRY_RUN_OCOH_REGRESSION = "false"
+ }
+
+
+ if (params.TEST_DRY_RUN_REGRESSION != null && params.TEST_DRY_RUN_REGRESSION){
+ TEST_DRY_RUN_REGRESSION = "true"
+ } else {
+ TEST_DRY_RUN_REGRESSION = "false"
+ }
+
+
+ if (params.TEST_DRY_RUN_D1SUITE != null && params.TEST_DRY_RUN_D1SUITE){
+ TEST_DRY_RUN_D1SUITE = "true"
+ } else {
+ TEST_DRY_RUN_D1SUITE = "false"
+ }
+
+ if (params.TEST_EXPECTED_PASS_RATE_OCOH_MAT != null) {
+ TEST_EXPECTED_PASS_RATE_OCOH_MAT = params.TEST_EXPECTED_PASS_RATE_OCOH_MAT
+ }
+
+ if (params.TEST_EXPECTED_PASS_RATE_OCOH_REGRESSION != null) {
+ TEST_EXPECTED_PASS_RATE_OCOH_REGRESSION = params.TEST_EXPECTED_PASS_RATE_OCOH_REGRESSION
+ }
+ if (params.TEST_EXPECTED_PASS_RATE_REGRESSION != null) {
+ TEST_EXPECTED_PASS_RATE_REGRESSION = params.TEST_EXPECTED_PASS_RATE_REGRESSION
+ }
+ if (params.TEST_EXPECTED_PASS_RATE_D1SUITE != null) {
+ TEST_EXPECTED_PASS_RATE_D1SUITE = params.TEST_EXPECTED_PASS_RATE_D1SUITE
+ }
+
+ }
+
+ if(params.TEST_NG_XML_CUSTOM != null ) {
+ stage('Custom xml')
+ {
+ TEST_DRY_RUN_OCOH_MAT = "true"
+ TEST_DRY_RUN_OCOH_REGRESSION = "true"
+ TEST_DRY_RUN_REGRESSION = "true"
+ TEST_DRY_RUN_D1SUITE = "true"
+ TEST_NG_XML_CUSTOM = params.TEST_NG_XML_CUSTOM
+ executeTestNG(LABEL_CUSTOM_XML, TEST_BASE_PATH, TEST_DRY_RUN_CUSTOM, TEST_NG_XML_CUSTOM, TEST_REPORT_PATH_CUSTOM, TEST_REPORT_FILE_NAME, TEST_EXPECTED_PASS_RATE_CUSTOM)
+ }
+ }
+
+ stage('OCOHMat')
+ {
+ executeTestNG(LABEL_OCOH_MAT, TEST_BASE_PATH, TEST_DRY_RUN_OCOH_MAT, TEST_NG_XML_OCOH_MAT, TEST_REPORT_PATH_OCOH_MAT, TEST_REPORT_FILE_NAME, TEST_EXPECTED_PASS_RATE_OCOH_MAT)
+ }
+
+ stage('OCOHRegression')
+ {
+ executeTestNG(LABEL_OCOH_REGRESSION, TEST_BASE_PATH, TEST_DRY_RUN_OCOH_REGRESSION, TEST_NG_XML_OCOH_REGRESSION, TEST_REPORT_PATH_OCOH_REGRESSION, TEST_REPORT_FILE_NAME, TEST_EXPECTED_PASS_RATE_OCOH_REGRESSION)
+ }
+
+ stage("Regression")
+ {
+ executeTestNG(LABEL_REGRESSION, TEST_BASE_PATH, TEST_DRY_RUN_REGRESSION, TEST_NG_XML_REGRESSION, TEST_REPORT_PATH_REGRESSION, TEST_REPORT_FILE_NAME, TEST_EXPECTED_PASS_RATE_REGRESSION)
+ }
+
+ stage("D1Suite")
+ {
+ executeTestNG(LABEL_D1SUITE, TEST_BASE_PATH, TEST_DRY_RUN_D1SUITE, TEST_NG_XML_D1SUITE, TEST_REPORT_PATH_D1SUITE, TEST_REPORT_FILE_NAME, TEST_EXPECTED_PASS_RATE_D1SUITE)
+ }
+
+ //stage("D1SuiteProgression")
+ // {
+ // executeTestNG("D1Prog", TEST_BASE_PATH, "false", "com/amdocs/core/oh/testng/d1suiteProgression_testng.xml", TEST_REPORT_PATH + "/d1suite_Progression", TEST_REPORT_FILE_NAME, TEST_EXPECTED_PASS_RATE_D1SUITE)
+ // }
+
+ if(params.RELEASE != null && params.RELEASE.toBoolean() && (scmVars.GIT_LOCAL_BRANCH=='master' || scmVars.GIT_LOCAL_BRANCH.startsWith('release/')) ) {
+
+ stage('Deploy Artifacts To Nexus')
+ {
+ env.JAR_BUILD_NUMBER = amd_semantic_version_calculation git_directory_path:"${WORKSPACE}", git_branch_name:"${BRANCH_NAME}", ssh_credential_id:"BITBUCKET_JENKINS_BUILD_PRIVATEKEY"
+
+ sh " sed -i 's/JAR_BUILD_NUMBER/$JAR_BUILD_NUMBER/g' configuration/maven/CI/order-handling-test-dd.yaml"
+ sh " mv configuration/maven/CI/order-handling-test-dd.yaml configuration/maven/CI/order-handling-test-jar-$JAR_BUILD_NUMBER-dd.yaml"
+ sh "mvn ${mvnParams} deploy:deploy-file -DgroupId=com.amdocs -DartifactId=order-handling-test-release -Dversion=${JAR_BUILD_NUMBER} -DgeneratePom=true -Dpackaging=yaml -DrepositoryId=indlin3991-nexus -Durl=http://indlin3991.corp.amdocs.com:28080/repository/OHFIT_Releases -Dfile=configuration/maven/CI/order-handling-test-jar-$JAR_BUILD_NUMBER-dd.yaml -Dyaml.finalName=order-handling-test-jar-$JAR_BUILD_NUMBER-dd.yaml"
+
+
+ sh "mvn ${mvnParams} versions:set -DnewVersion=${JAR_BUILD_NUMBER}"
+ sh "mvn ${mvnParams} clean deploy -DskipTests"
+ }
+ }
+
+ }
+
+def executeTestNG(String executionLabel, String testBasePath, String isDryRun, String testNGXml, String reportPath, String reportFileName, String expectedPassRate){
+ echo "Entering: executeTestNG"
+ updateTestNGParameters(testBasePath + "/" + testNGXml)
+
+ echo "Automation start: " + new Date().format("dd/MM/yyyy HH:mm:ss")
+
+ try
+ {
+ sh "cd ${testBasePath}; java -Dtestng.mode.dryrun=${isDryRun} -cp .:./src/test/resources org.testng.TestNG ${testNGXml} -parallel tests -threadcount 4 -usedefaultlisteners false -d ${WORKSPACE}/${reportPath}"
+ }
+ catch (error) {
+
+ }
+ finally {
+ echo "automation end: " + new Date().format("dd/MM/yyyy HH:mm:ss")
+
+ loadReport(executionLabel, reportPath, reportFileName)
+ assertTestPassRate(executionLabel, reportPath, reportFileName, expectedPassRate)
+ }
+}
+
+
+def loadReport(String reportName, String reportDir, String reportFiles){
+ echo "loading report from: " + reportDir + " " + reportFiles
+ publishHTML(target: [
+ allowMissing : false,
+ alwaysLinkToLastBuild: true,
+ keepAll : true,
+ reportDir : reportDir,
+ reportFiles : reportFiles,
+ reportName : reportName
+ ])
+}
+
+def assertTestPassRate(String reportName, String reportPath, String reportFileName, String expectedPassRateString){
+ assert isPassRateReached(reportName, reportPath, reportFileName, expectedPassRateString) : "pass-rate reached"
+}
+
+boolean isPassRateReached(String reportName, String reportPath, String reportFileName, String expectedPassRateString){
+ echo "calculating testing pass rate"
+ String actualPassRateString = 0
+ if( fileExists(reportPath + '/custom-report-summary.properties') ){
+ reportFileName = 'custom-report-summary.properties'
+ echo "custom-report-summary.properties file exist"
+ actualPassRateString = sh (script: "cat ${reportPath}/custom-report-summary.properties | grep passrateforeresult | awk -vRS='<|>' NR%2", returnStdout: true).trim().replaceAll("passrateforeresult=", "")
+ echo "actualPassRateString: " + actualPassRateString
+ echo "end"
+ }
+ else {
+ echo "custom-report-summary.properties file NOT exist"
+ actualPassRateString = sh(script: "cat ${reportPath}/${reportFileName} | grep passrateforeresult | awk -vRS='<|>' NR%2", returnStdout: true).trim().replaceAll("(?m)^[ \t]*\r?\n", "")
+ }
+ echo "calculating testing pass rate from " + reportFileName + " file"
+ echo "Actual pass-rate extracted from html=='" + actualPassRateString + "'"
+ assert actualPassRateString.matches("[0-9]+(\\.[0-9]+|)") : "Expected actualPassRateString matches '[0-9]+(\\.[0-9]+|)' actual: '" + actualPassRateString + "'"
+
+ echo "pass-rate: expected=" + expectedPassRateString + " actual=" + actualPassRateString
+
+ currentBuild.description = currentBuild.description + " " + reportName + " pass-rate: expected=" + expectedPassRateString + " actual=" + actualPassRateString
+
+ return actualPassRateString.toDouble() >= expectedPassRateString.toDouble()
+}
+
+def updateTestNGParameters(String testNGXml){
+ assert params.OPENSHIFT_OC_BASEURI != null : "OPENSHIFT_OC_BASEURI should not be null"
+ assert params.OPENSHIFT_OC_PROJECT_NAME != null : "OPENSHIFT_OC_PROJECT_NAME should not be null"
+ assert params.OPENSHIFT_OC_PROJECT_TOKEN != null : "OPENSHIFT_OC_PROJECT_TOKEN should not be null"
+
+ String testConfigFile = readFile("${testNGXml}")
+
+ testConfigFile = testConfigFile.replace("OPENSHIFT_OC_BASEURI", params.OPENSHIFT_OC_BASEURI)
+ testConfigFile = testConfigFile.replace("OPENSHIFT_OC_PROJECT_NAME", params.OPENSHIFT_OC_PROJECT_NAME)
+ testConfigFile = testConfigFile.replace("OPENSHIFT_OC_PROJECT_TOKEN", params.OPENSHIFT_OC_PROJECT_TOKEN)
+
+ if (params.CARE_ISSIMULATOR != null) {
+ testConfigFile = testConfigFile.replace("CARE_ISSIMULATOR", params.CARE_ISSIMULATOR)
+ }
+ else
+ {
+ testConfigFile = testConfigFile.replace("CARE_ISSIMULATOR", "true")
+ }
+ if (params.SPECIFIC_CLASS_NAME != null) {
+ testConfigFile = testConfigFile.replace("SPECIFIC_CLASS_NAME", params.SPECIFIC_CLASS_NAME)
+ }
+ writeFile file: "${testNGXml}", text: testConfigFile
+
+
+ sh "cat ${testNGXml}"
+}
