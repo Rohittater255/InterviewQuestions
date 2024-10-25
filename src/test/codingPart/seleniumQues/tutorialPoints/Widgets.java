@@ -39,21 +39,21 @@ public class Widgets {
 
         driver.findElement(By.id("datetimepicker1")).click();
 
-        String date="January 1, 2023";
-        String month=date.split(" ")[0];
-        String year=date.split(" ")[2];
+        String date = "January 1, 2023";
+        String month = date.split(" ")[0];
+        String year = date.split(" ")[2];
 
         //Click on Date selector
         Select select = new Select(driver.findElement(By.xpath("//div[@class='flatpickr-calendar hasTime animate open arrowTop arrowLeft']//select[@class='flatpickr-monthDropdown-months']")));
 
         //Wait for date popup to be loaded
-        WebDriverWait wait= new WebDriverWait(driver,Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='flatpickr-calendar hasTime animate arrowTop arrowLeft open']//input[@aria-label='Year']/following-sibling::span[@class='arrowUp']")));
 
         Actions actions = new Actions(driver);
         actions.moveToElement(driver.findElement(By.xpath("//div[@class='flatpickr-calendar hasTime animate arrowTop arrowLeft open']//input[@aria-label='Year']/following-sibling::span[@class='arrowUp']"))).build().perform();
         //Select Year
-        for (int i = 0; i < 2024-2023; i++) {
+        for (int i = 0; i < 2024 - 2023; i++) {
             driver.findElement(By.xpath("//div[@class='flatpickr-calendar hasTime animate arrowTop arrowLeft open']//input[@aria-label='Year']/following-sibling::span[@class='arrowUp']")).click();
         }
 
@@ -69,19 +69,19 @@ public class Widgets {
         driver.get("https://www.tutorialspoint.com/selenium/practice/slider.php");
 
         //Perform click
-        WebElement slider= driver.findElement(By.id("ageInputId"));
+        WebElement slider = driver.findElement(By.id("ageInputId"));
         slider.click();
 
         //Perform Movde in Slider
-        int moveToAge=45;//55
-        while (Integer.valueOf(driver.findElement(By.id("ageOutputId")).getText())!=moveToAge){
-            if(moveToAge>50) {
+        int moveToAge = 45;//55
+        while (Integer.valueOf(driver.findElement(By.id("ageOutputId")).getText()) != moveToAge) {
+            if (moveToAge > 50) {
                 slider.sendKeys(Keys.ARROW_RIGHT);
-            }else {
+            } else {
                 slider.sendKeys(Keys.LEFT);
             }
             TimeUnit.SECONDS.sleep(3);
-            System.out.println("Moved to "+driver.findElement(By.id("ageOutputId")).getText());
+            System.out.println("Moved to " + driver.findElement(By.id("ageOutputId")).getText());
         }
     }
 

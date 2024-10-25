@@ -26,18 +26,18 @@ public class Q3_TwoSums {
     public void twoSum1() {
         int[] arr = {2, 3, 5, 6, 7, 8, 9};
         int target = 12;
-        Map<Integer,Integer> hashMap = new HashMap();
+        Map<Integer, Integer> hashMap = new HashMap();
 
         for (int i = 0; i < arr.length; i++) {
-            hashMap.put( arr[i],i);
+            hashMap.put(arr[i], i);
             //System.out.println(hashMap.get(arr[i]));
         }
 
 
         for (int i = 0; i < arr.length; i++) {
-        int diff = target-arr[i];//12-2
-            if (hashMap.containsKey(diff) && hashMap.get(diff) != i )  {
-                System.out.println(arr[i] +" and "+diff);
+            int diff = target - arr[i];//12-2
+            if (hashMap.containsKey(diff) && hashMap.get(diff) != i) {
+                System.out.println(arr[i] + " and " + diff);
             }
         }
     }

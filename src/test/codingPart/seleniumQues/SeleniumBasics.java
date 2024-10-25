@@ -5,7 +5,6 @@ import io.restassured.response.Response;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.logging.LogEntry;
 import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -37,7 +36,7 @@ public class SeleniumBasics {
         options.addArguments("use-fake-ui-for-media-stream");
         options.addArguments("--safebrowsing-disable-download-protection");
 
-        options.addArguments("--unsafely-treat-insecure-origin-as-secure="+"https://get.jenkins.io/windows-stable/2.426.1/jenkins.msi");
+        options.addArguments("--unsafely-treat-insecure-origin-as-secure=" + "https://get.jenkins.io/windows-stable/2.426.1/jenkins.msi");
         options.addArguments("--allow-running-insecure-content");
         options.addArguments("--disable-features=InsecureDownloadWarnings");//To allow downloads
 //        options.setCapability();
@@ -206,7 +205,6 @@ public class SeleniumBasics {
 
 
     }
-
 
 
     //Refer https://www.youtube.com/watch?v=Qb3EZYGnono

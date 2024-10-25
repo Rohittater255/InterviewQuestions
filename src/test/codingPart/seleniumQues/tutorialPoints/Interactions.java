@@ -68,7 +68,7 @@ public class Interactions {
 
         //Perform Operation
         Actions action = new Actions(driver);
-        action.dragAndDropBy(e,204,104).build().perform();
+        action.dragAndDropBy(e, 204, 104).build().perform();
 
         //Getting Attribute Before Performing action
         System.out.println("width After: " + e.getCssValue("width"));

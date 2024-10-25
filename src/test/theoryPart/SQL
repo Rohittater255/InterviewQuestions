@@ -61,3 +61,9 @@ TRUNCATE TABLE cricketer;
 
 5) Drop query
 DROP TABLE cricketer;
+
+6) Update Query
+UPDATE employees
+SET salary = 75000
+WHERE employee_id = 5;
+

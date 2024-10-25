@@ -1,10 +1,10 @@
-package test.codingPart.programs;
+package codingPart.programs.basicJava;
 
 import org.testng.annotations.Test;
 
 import java.util.*;
 
-public class Q2_Duplicate_Unique_InArray {
+public class ArrayQues {
 
     @Test
     public void findDuplicateInArray() {
@@ -60,19 +60,19 @@ public class Q2_Duplicate_Unique_InArray {
 
         LinkedHashSet<String> hashSet = new LinkedHashSet<String>(arrList);
         System.out.println(hashSet.size());
-        arrList= new ArrayList<>(hashSet);
+        arrList = new ArrayList<>(hashSet);
 
         for (int i = 0; i < arrList.size(); i++) {
-            System.out.println("arrList--> "+ arrList.get(i));
+            System.out.println("arrList--> " + arrList.get(i));
         }
 
 
         HashSet<String> hashSet1 = new HashSet<>(arrList);
         System.out.println(hashSet1.size());
-        arrList= new ArrayList<>(hashSet1);
+        arrList = new ArrayList<>(hashSet1);
 
         for (int i = 0; i < arrList.size(); i++) {
-            System.out.println("arrList--> "+ arrList.get(i));
+            System.out.println("arrList--> " + arrList.get(i));
         }
     }
 }

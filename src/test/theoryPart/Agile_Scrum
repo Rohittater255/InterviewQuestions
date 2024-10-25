@@ -1,0 +1,37 @@
+- Define Agile?
+  Agile is a methodology in software development that emphasizes iterative progress,
+  collaboration, and flexibility. Instead of working on a project from start to finish in one go,
+  Agile breaks the process into smaller, manageable chunks called sprints.
+  Each sprint typically lasts 1-4 weeks and results in a potentially shippable product increment.
+
+- what is velocity report in jira
+    A velocity report in Jira is a tool used by Agile teams to track and visualize
+    their sprint performance over time
+
+- Define Scrum And Sprint?
+  Scrum is an Agile framework used for managing and completing complex projects.
+  It emphasizes teamwork, accountability, and iterative progress toward a well-defined goal.
+  The Scrum framework includes roles such as Scrum Master, Product Owner, and Development Team,
+  ceremonies like daily stand-ups, sprint planning, sprint reviews, and retrospectives,
+  and artifacts such as the product backlog and sprint backlog.
+
+  A Sprint is a set period (usually 1-4 weeks) during which specific work has to be completed and
+  made ready for review. Each sprint begins with a planning meeting and ends with a review and retrospective.
+  The goal is to build a usable product increment at the end of each sprint.
+
+- What is the estimation in Sprint?
+
+- What is the estimation techniques in Sprint?
+    Planning Poker: Team members use cards to estimate the effort for tasks, revealing their cards simultaneously to encourage discussion and consensus.
+    T-shirt Sizes: Tasks are categorized into sizes like XS, S, M, L, and XL to represent effort, making it quick and easy to understand.
+    Three-Point Estimation: Uses three values—optimistic, pessimistic, and most likely—to calculate an average estimate.
+    Bucket System: Similar to Planning Poker but with a larger group, this method uses buckets (categories) to place tasks and reach consensus.
+
+- Explain the differences between a product backlog and a sprint backlog, and their respective roles in Scrum.
+
+- Scrum  vs kanban
+
+### Test Plan And Test Strategy ###
+- What are the different closure reports?
+- What is the difference between a Test Plan and a Test Strategy document?
+- What is entry and exit criteria?

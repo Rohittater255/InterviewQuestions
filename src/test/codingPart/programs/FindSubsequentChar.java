@@ -10,12 +10,12 @@ public class FindSubsequentChar {
         String b = "";
 
         for (int i = 0; i < str.length(); i++) {
-            if (str.charAt(i) == 'z'){
-                b=b + "str";
-            }else {
+            if (str.charAt(i) == 'z') {
+                b = b + "str";
+            } else {
                 b = b + (char) (str.charAt(i) + 1);
             }
-            System.out.println("Subsequent Char for char=" +str.charAt(i) + b);
+            System.out.println("Subsequent Char for char=" + str.charAt(i) + b);
         }
     }
 }

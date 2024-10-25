@@ -19,7 +19,6 @@ public class WiremockPractice_StubbingFromJavaCode {
                 .build();
 
 
-
         WireMock.stubFor(WireMock.get(WireMock.urlEqualTo("/football/ronaldo")).
                 willReturn(WireMock.aResponse().
                         withStatus(200).
@@ -30,8 +29,6 @@ public class WiremockPractice_StubbingFromJavaCode {
         System.out.println("The wiremock response is " + response.body().asString());
 
     }
-
-
 
 
 }

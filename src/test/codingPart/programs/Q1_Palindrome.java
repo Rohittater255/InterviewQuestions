@@ -58,15 +58,15 @@ public class Q1_Palindrome {
 
         // Logic
         //  "ABCBAE"
-        String longestSubstring="";
+        String longestSubstring = "";
 
         for (int i = 0; i < str.length(); i++) {
             for (int j = i + 1; j < str.length() + 1; j++) {
                 String subString = str.substring(i, j);
 
                 //System.out.println("i=" + i + " and j=" + j + " and subString=" + subString + " palindrome=" + isPalindrome(subString));
-                if (isPalindrome(subString) && subString.length()>longestSubstring.length()) {
-                    longestSubstring=subString;
+                if (isPalindrome(subString) && subString.length() > longestSubstring.length()) {
+                    longestSubstring = subString;
                 }
             }
         }
@@ -85,6 +85,6 @@ public class Q1_Palindrome {
         }
         //System.out.println("Orignal=" + str + " and reverse=" + reverse);
 
-        return orignal.equalsIgnoreCase(reverse) ? true : false;
+        return orignal.equalsIgnoreCase(reverse);
     }
 }

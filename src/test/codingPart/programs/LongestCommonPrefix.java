@@ -16,7 +16,7 @@ public class LongestCommonPrefix {
         String prefix = words.get(0);
         for (int i = 1; i < words.size(); i++) {
             while (words.get(i).indexOf(prefix) != 0) {
-                System.out.println("prefix "+words.get(i).indexOf(prefix) );
+                System.out.println("prefix " + words.get(i).indexOf(prefix));
                 prefix = prefix.substring(0, prefix.length() - 1);
             }
         }
@@ -32,10 +32,10 @@ public class LongestCommonPrefix {
 
         String prefix = words.get(0);
         for (int i = 1; i < words.size(); i++) {
-            if(!words.get(i).startsWith(prefix)){
-                prefix=prefix.substring(0,prefix.length()-1);
+            if (!words.get(i).startsWith(prefix)) {
+                prefix = prefix.substring(0, prefix.length() - 1);
                 System.out.println("prefix " + prefix);
-            }else {
+            } else {
                 break;
             }
         }

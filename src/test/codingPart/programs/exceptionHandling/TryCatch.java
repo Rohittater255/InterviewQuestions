@@ -9,11 +9,10 @@ public class TryCatch {
         try {
             System.out.println("Generic Try Block ");
             throw new MyCustomException("Generic Exception Message");
-        }
-        catch (MyCustomException e){
+        } catch (MyCustomException e) {
             System.out.println("Generic Catch Block ");
-            System.out.println("Exception "+e);
-        }finally {
+            System.out.println("Exception " + e);
+        } finally {
             System.out.println("Generic Finally Block");
         }
     }

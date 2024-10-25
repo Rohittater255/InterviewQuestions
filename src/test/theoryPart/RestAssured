@@ -12,6 +12,37 @@ ali################### API Related###################
 
 5) Serialization vs deserialization
 
+6) what is json schema?:
+JSON Schema is a way to validate the structure of your JSON data.
+Think of it as a blueprint that defines what your JSON data should look like,
+ including the types of values and the required fields.
+
+7) What is swagger?
+
+
+#### types of authentication in api ####
+
+    1) HTTP Basic Authentication:
+        This is a simple authentication scheme where the user's credentials (username and password)
+        are encoded and sent with each request1.
+        It's easy to implement but not very secure on its own.
+
+    2)  API Key Authentication:
+        An API key is a unique identifier issued to users to control access and monitor usage1.
+        It's often used for simpler APIs and can be passed in the header or as a query parameter.
+
+    3) JSON Web Token (JWT) Authentication:
+         JWT is a compact, stateless authentication mechanism1.
+         It encodes user information in a JSON object, which is then signed and sent with each request. It's widely used due to its scalability and security.
+
+    4) OAuth:
+        OAuth is a more complex authentication framework that allows third-party applications to
+        obtain limited access to an HTTP service on behalf of the user2.
+        It's commonly used for granting access to resources without sharing passwords.
+
+    5) OpenID Connect:
+        This is an authentication layer on top of OAuth 2.0, providing a way to verify the identity
+        of the end-user based on the authentication performed by an Authorization Server2
 
 
 ################### REST ASSURED ###################

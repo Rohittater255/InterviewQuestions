@@ -50,7 +50,7 @@ public class Elements {
         actions.moveToElement(driver.findElement(By.xpath("//*[contains(text(),'on top')]"))).build().perform();
 
         //get the value of the "title" attribute
-        String actualTooltip =driver.findElement(By.xpath("//*[contains(text(),'on top')]")).getAttribute("title");
+        String actualTooltip = driver.findElement(By.xpath("//*[contains(text(),'on top')]")).getAttribute("title");
         System.out.println("Tool Tip:- " + actualTooltip);
 
     }

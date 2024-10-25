@@ -1,7 +1,5 @@
 package codingPart.programs.CollectionImp;
 
-import org.testng.annotations.Test;
-
 import java.util.Vector;
 
 public class StackTest extends Vector {
@@ -37,7 +35,6 @@ public class StackTest extends Vector {
     }
 
 
-
     public void push(int a) {
         if (isFull()) {
             throw new RuntimeException();
@@ -54,8 +51,6 @@ public class StackTest extends Vector {
     public int peek() {
         return arr[top];
     }
-
-
 
 
 }

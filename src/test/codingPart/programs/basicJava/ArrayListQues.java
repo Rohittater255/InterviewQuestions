@@ -1,11 +1,11 @@
-package codingPart.programs;
+package codingPart.programs.basicJava;
 
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Q2_Duplicate_Unique_InArrayList {
+public class ArrayListQues {
 
     @Test()
     public void findAdditionalElement() {

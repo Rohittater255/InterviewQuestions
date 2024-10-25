@@ -95,11 +95,12 @@ Reference Videos
  a) local variables(primitive) - Stack
    - Example: int a=5;
  b) local variables(non-primitive) - Reference will stored in stack and value will be stored in heap
-   - Example: Integer a=5;
- c) class methods - Metaspace
- d) reference variables- Stack
- e) instance variables? - Stack
- f) where is memory allocated for instance variables of each object ? - Stack
+   - Example: Integer a=5; - Reference 'a' will stored in stack and value '5' will be stored in heap
+ c) local variables(non-primitive) - Reference will stored in stack and value will be stored in heap
+   - Example: String a="5"; - Reference 'a' will stored in stack and value '5' will be stored in heap
+ d) class methods - Metaspace
+ e) reference variables- Stack
+ f) instance variables? - Heap
  g) Static variables(Class Variables) - Metaspace
  h) Static methods - Metaspace
 
@@ -109,8 +110,8 @@ The heap memory in Java is divided into several parts, each serving a specific p
     1. Young Generation
     This is where all new objects are allocated. The young generation is further divided into three parts:
 
-        a)Eden Space: This is where new objects are initially allocated.
-        b)Survivor Space (S0 and S1): After surviving one or more garbage collection cycles in the Eden space, objects are moved to the survivor spaces. There are typically two survivor spaces, S0 and S1, which are used alternately.
+        a) Eden Space: This is where new objects are initially allocated.
+        b) Survivor Space (S0 and S1): After surviving one or more garbage collection cycles in the Eden space, objects are moved to the survivor spaces. There are typically two survivor spaces, S0 and S1, which are used alternately.
 
     2. Old Generation (Tenured Generation)
     Objects that have survived multiple garbage collection cycles in the young generation are moved to the old generation. This space is used to store long-lived objects. Garbage collection in the old generation is less frequent but more time-consuming compared to the young generation.

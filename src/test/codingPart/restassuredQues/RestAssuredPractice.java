@@ -17,17 +17,20 @@ import java.io.InputStream;
 public class RestAssuredPractice {
 
     @Test
-    public void setSSL() {
+    public void enableSSL() {
         //Disable SSL
         RestAssured.useRelaxedHTTPSValidation();
-
-        //Use SSL
-//        RestAssured.config().sslConfig(new SSLConfig().keyStore("filepath","password").trustStore("filepath","password"));
     }
 
     @Test
-    public void setConnectionTimeOut() {
+    public void disableSSL() {
+        //Enable SSL
+//        RestAssured.config().sslConfig(new SSLConfig().keyStore("filepath","password").trustStore("filepath","password"));
+    }
 
+
+    @Test
+    public void setConnectionTimeOut() {
         //Set Connection and Socket timeout
         RestAssured.config().
                 httpClient(HttpClientConfig.httpClientConfig().
@@ -69,7 +72,7 @@ public class RestAssuredPractice {
         //Run Get
         Response response = RestAssured.given().header("Content-Type", "application/json").
                 //pathParam("", "").
-                queryParam("limit", 10).  // Set the limit
+                        queryParam("limit", 10).  // Set the limit
                         queryParam("offset", 20). // Set the offset
                         when().
                 get("https://api.restful-api.dev/objects");
@@ -92,21 +95,21 @@ public class RestAssuredPractice {
 //        }
 
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("name","Rohit");
+        jsonObject.put("name", "Rohit");
 
-        JSONArray arr =new JSONArray();
+        JSONArray arr = new JSONArray();
         JSONObject contact1 = new JSONObject();
-        contact1.put("number","1234567890");
+        contact1.put("number", "1234567890");
         arr.put(contact1);
 
         JSONObject contact2 = new JSONObject();
-        contact2.put("number","0987654321");
+        contact2.put("number", "0987654321");
         arr.put(contact2);
 
-        jsonObject.put("contact",arr);
+        jsonObject.put("contact", arr);
 
         System.out.println(jsonObject);
-        String contact=JsonPath.using(Configuration.defaultConfiguration()).parse(jsonObject.toString()).read("$.name");
+        String contact = JsonPath.using(Configuration.defaultConfiguration()).parse(jsonObject.toString()).read("$.name");
         System.out.println(contact);
     }
 

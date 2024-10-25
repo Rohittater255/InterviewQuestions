@@ -6,6 +6,9 @@
   "response": {
     "status": 200,
     "body": "Original body",
-    "transformers": ["my-transformer", "other-transformer"]
+    "transformers": [
+      "my-transformer",
+      "other-transformer"
+    ]
   }
 }

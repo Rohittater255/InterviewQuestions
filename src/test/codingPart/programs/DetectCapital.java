@@ -36,10 +36,6 @@ public class DetectCapital {
             return true;
         } else if (Character.isUpperCase(str.charAt(0)) && count == 1) {
             return true;
-        } else if (!Character.isUpperCase(str.charAt(0)) && count == 0) {
-            return true;
-        } else {
-            return false;
-        }
+        } else return !Character.isUpperCase(str.charAt(0)) && count == 0;
     }
 }
