@@ -207,35 +207,5 @@ public class SeleniumBasics {
     }
 
 
-    //Refer https://www.youtube.com/watch?v=Qb3EZYGnono
-    @Test
-    public void downloadFile() {
-        //navigate to webpage
-        driver.get("https://www.amazon.in/");
 
-        driver.get("https://get.jenkins.io/windows-stable/2.426.1/jenkins.msi");
-
-        String downloadPath = "C:\\Users\\";
-        String fileName = "jenkins.msi";
-
-        File file = new File(downloadPath, fileName);
-
-        FluentWait<File> wait = new FluentWait<File>(file)
-                .withTimeout(Duration.ofMinutes(5))
-                .pollingEvery(Duration.ofSeconds(2))
-                .ignoring(Exception.class).withMessage("file is not downloaded");
-
-        try {
-            boolean isDownloaded = wait.until(f -> f.exists() && f.canRead());
-
-            if (isDownloaded) {
-                System.out.println("file is completely 100% downloaded");
-            }
-
-        } catch (TimeoutException e) {
-            System.out.println("file is not completely  downloaded");
-
-        }
-
-    }
 }

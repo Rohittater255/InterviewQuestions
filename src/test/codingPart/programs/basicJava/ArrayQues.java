@@ -2,77 +2,40 @@ package codingPart.programs.basicJava;
 
 import org.testng.annotations.Test;
 
-import java.util.*;
+import java.util.Arrays;
 
 public class ArrayQues {
 
-    @Test
-    public void findDuplicateInArray() {
-
-        ArrayList<String> arrList = new ArrayList<>();
-        arrList.add("a");
-        arrList.add("b");
-        arrList.add("c");
-        arrList.add("a");
-        arrList.add("a");
-        HashMap<String, Integer> hashmap = new HashMap<String, Integer>();
-        for (int i = 0; i < arrList.size(); i++) {
-            hashmap.put(arrList.get(i), hashmap.getOrDefault(arrList.get(i), 0) + 1);
-        }
-
-        System.out.println("Below are Duplicate Elements");
-        for (Map.Entry<String, Integer> entry : hashmap.entrySet()) {
-            if (entry.getValue() > 1)
-                System.out.println(entry.getKey() + " --> " + entry.getValue());
-        }
-    }
 
     @Test
-    public void findUniqueInArray() {
+    public void sortArray() {
 
-        ArrayList<String> arrList = new ArrayList<>();
-        arrList.add("a");
-        arrList.add("b");
-        arrList.add("c");
-        arrList.add("a");
-
-        HashMap<String, Integer> hashmap = new HashMap<String, Integer>();
-        for (int i = 0; i < arrList.size(); i++) {
-            hashmap.put(arrList.get(i), hashmap.getOrDefault(arrList.get(i), 0) + 1);
+        int[] arr = {1, 2, 5, 4};
+        System.out.println("Arrays before: " + Arrays.toString(arr));
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i] > arr[j]) {
+                    int tmp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = tmp;
+                }
+            }
         }
+        System.out.println("Ascending sort: " + Arrays.toString(arr));
 
-        System.out.println("Below are Unique Elements");
-        for (Map.Entry<String, Integer> entry : hashmap.entrySet()) {
-            if (entry.getValue() == 1)
-                System.out.println(entry.getKey() + " --> " + entry.getValue());
+
+        int[] newArr = {1, 2, 5, 4};
+        System.out.println("Arrays before: " + Arrays.toString(newArr));
+        for (int i = 0; i < newArr.length; i++) {
+            for (int j = i + 1; j < newArr.length; j++) {
+                if (newArr[i] < newArr[j]) {
+                    int tmp = newArr[i];
+                    newArr[i] = newArr[j];
+                    newArr[j] = tmp;
+                }
+            }
         }
-    }
+        System.out.println("Descending sort: " + Arrays.toString(newArr));
 
-    @Test
-    public void removeDuplicateInArray() {
-
-        ArrayList<String> arrList = new ArrayList<>();
-        arrList.add("a");
-        arrList.add("b");
-        arrList.add("c");
-        arrList.add("a");
-        String[] arr;
-
-        LinkedHashSet<String> hashSet = new LinkedHashSet<String>(arrList);
-        System.out.println(hashSet.size());
-        arrList = new ArrayList<>(hashSet);
-
-        for (int i = 0; i < arrList.size(); i++) {
-            System.out.println("arrList--> " + arrList.get(i));
-        }
-
-
-        HashSet<String> hashSet1 = new HashSet<>(arrList);
-        System.out.println(hashSet1.size());
-        arrList = new ArrayList<>(hashSet1);
-
-        for (int i = 0; i < arrList.size(); i++) {
-            System.out.println("arrList--> " + arrList.get(i));
-        }
     }
 }
