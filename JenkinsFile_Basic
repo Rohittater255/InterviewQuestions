@@ -1,0 +1,80 @@
+// Define the pipeline
+pipeline {
+ agent any
+
+ // Options
+ options {
+  disableConcurrentBuilds()
+  timestamps()
+  buildDiscarder(logRotator(numToKeepStr: '25', daysToKeepStr: '60', artifactDaysToKeepStr: '7', artifactNumToKeepStr: '5'))
+ }
+
+ // Define the parameters section
+ parameters {
+  // Add a choice parameter for version selection with default value as 1.0
+  choice(name: 'version', choices: ['1.0', '1.1', '2.0'], description: 'Select the version')
+  // Add a boolean parameter to control test execution
+  booleanParam(name: 'executeTests', defaultValue: true, description: 'Execute Tests')
+  // Add a string parameter for the branch name
+  string(name: 'branch', defaultValue: 'main', description: 'Branch to build')
+ }
+
+ // Define the parameters section
+ environment  {
+  SERVER_CREDENTIALS= credentials('be930049-8ea9-4418-88bc-4d2fe7ca8ef7')
+  Automation_NAME= 'MY_AUTOMATION'
+  Automation_VERSION= '1.1'
+ }
+
+ //echo "Running Automatiom Suite Name: ${Automation_NAME} : ${Automation_VERSION}"
+
+ // Define the stages in the pipeline
+ stages {
+  // Stage to build the application
+  stage("Print Environment & Parameters Info") {
+   steps {
+    echo '#########Print Environment & Parameters Info'
+    //echo "Running with credentials: ${SERVER_CREDENTIALS}"//Using Dpuble Quotes is not correct
+    echo 'Running with credentials: ${SERVER_CREDENTIALS}'
+    echo 'Selected Version: ${params.version}'
+    echo "Building branch: ${params.branch}"
+   }
+  }
+
+  // Stage to build the application
+  stage("build") {
+   steps {
+    echo 'building the application'
+    echo "Building branch: ${params.branch}"
+   }
+  }
+
+  // Stage to test the application, runs only if executeTests is true
+  stage("test") {
+   when {
+    expression { return params.executeTests }
+   }
+   steps {
+    echo 'testing the application becasue executeTests={params.executeTests}'
+   }
+  }
+
+  // Stage to deploy the application
+  stage("deploy") {
+   steps {
+    echo 'deploying the application'
+   }
+  }
+ }
+
+ // Post-build actions
+ post {
+  always {
+   script {
+    // Use a dummy pass percentage for now
+    def passPercentage = 80
+    echo "Build completed. Pass percentage: ${passPercentage}%"
+   }
+  }
+ }
+}

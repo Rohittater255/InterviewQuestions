@@ -48,6 +48,9 @@ INSERT INTO cricketer (Id, FirstName, LastName, PlayerOfMatch, Type)
 VALUES (6, 'Sachin', 'Tendulkar', 62, 'Batting');
 
 
+SELECT *
+FROM EmployeeDetails
+WHERE SUBSTRING(joiningDate, 7, 4) = '2020';
 
 3) Delete query to delete Yuvraj Singh
 
@@ -66,4 +69,5 @@ DROP TABLE cricketer;
 UPDATE employees
 SET salary = 75000
 WHERE employee_id = 5;
+
 

@@ -113,7 +113,7 @@ public class Interactions {
 
 
     @Test(enabled = false)
-    public void a() throws InterruptedException, IOException {
+    public void copyPasteFromKeyBoard() throws InterruptedException, IOException {
         WebDriver driver = new ChromeDriver();
 
         //navigate to webpage

@@ -1,3 +1,6 @@
+https://www.youtube.com/watch?v=VouscOgOmZE&list=PLq3uEqRnr_2FKs8K3_kIG9g93Uy9dVdtR
+https://github.com/codefarm0/WireMock
+https://www.youtube.com/watch?v=XT9d_cBSCOA
 ################### Wiremock ###################
 
 1) What is wiremock. Why and when we use it?
@@ -28,3 +31,14 @@
        g) Go to Browser and run invalid Request ( Url: http://localhost:8080/invalid)
 
     ii) Running as Docker Image (remote mode):
+
+
+
+What is the difference between stubbing and mocking in WireMock?
+    Stubbing and mocking in WireMock serve distinct purposes:
+
+    Stubbing involves creating predefined responses for specific API requests. It's like setting up a fake service endpoint with fixed responses. This is particularly useful for testing how your application handles various API responses without needing the actual service.
+
+    Mocking goes a step further by verifying that certain requests were made. It not only simulates the API but also checks if the interactions with the API match your expectations, ensuring your application makes the correct API calls.
+
+    In short, stubbing is about providing responses, while mocking is about verifying interactions. Each can be useful depending on what aspect of your application you need to test or simulate.

@@ -3,6 +3,8 @@ package codingPart.programs.basicJava;
 import org.testng.annotations.Test;
 
 import java.util.Arrays;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class StringsQues {
 
@@ -28,8 +30,6 @@ public class StringsQues {
         int e = 0010;//(8*3)*0 + (8*2)*0 + (8*1)*1 + (8*0)*0=8
         int f = 0020;//(8*3)*0 + (8*2)*0 + (8*1)*2 + (8*0)*0=24
         System.out.println(e + f);
-
-
     }
 
     @Test
@@ -53,12 +53,12 @@ public class StringsQues {
 
     @Test
     public void differentRegex() {
-        String a = "          Hello            World               !!"+ System.currentTimeMillis();
+        String a = "          Hello            World               !!" + System.currentTimeMillis();
         System.out.println("Original String      :-     " + a);
         System.out.println("Remove Multiple Space:-     " + a.replaceAll("\\s+", " "));
         System.out.println("Remove Multiple Character:- " + a.replaceAll("\\w+", " "));
         System.out.println("Remove Multiple Digits:-    " + a.replaceAll("\\d+", " "));
-        System.out.println("Remove Special Character:- " + a.replaceAll("\\w+", " "));
+
     }
 
 
@@ -94,12 +94,29 @@ public class StringsQues {
         System.out.println("Z: " + z);
     }
 
-    @Test
-    public void findIndex() {
-        String k = "23";
-        int num = 0;
-        num = Integer.valueOf(k.substring(0, 1));
-        System.out.println("num: " + num);
+    /*
+        In regex (regular expressions), these are quantifiers that specify how many times an element can occur:
+                + : Matches one or more of the preceding element (e.g., a+ matches "a", "aa", "aaa", etc.)
+                ? : Matches zero or one of the preceding element (e.g., a? matches "" or "a")
+                * : Matches zero or more of the preceding element (e.g., a* matches "", "a", "aa", "aaa", etc.)
+                {n} : Matches exactly n occurrences of the preceding element (e.g., a{3} matches "aaa")
+
+    */
+    @Test(description = "Get 6 digit number from paragraph")
+    public void getSpecificPatternFromString() {
+        String st = "You OTP is 123456. Please contact 9876543210 InCase of any issue";
+        Matcher matcher = Pattern.compile("\\d{6}").matcher(st);
+        if (matcher.find()) {
+            System.out.println("OTP:- " + matcher.group());
+        }
+
+
+        String s = "You OTP is aRVTys. Please contact 9876543210 InCase of any issue";
+        Matcher matcher1 = Pattern.compile("OTP is (\\S+)").matcher(s);
+        if (matcher1.find()) {
+            System.out.println("OTP:- " + matcher1.group(1));
+        }
+
     }
 
 
@@ -110,8 +127,8 @@ public class StringsQues {
         int index = 0;
         for (int i = a.length - 1; i >= 0; i--) {
             if (a[i] == " ") {
-                int n=a.length -index;
-                for (int j = i+1; j < n; j++) {
+                int n = a.length - index;
+                for (int j = i + 1; j < n; j++) {
                     b[index++] = a[j];
                 }
                 b[index++] = " ";

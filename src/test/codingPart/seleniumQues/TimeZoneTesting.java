@@ -1,8 +1,10 @@
 package codingPart.seleniumQues;
 
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Test;
 
 import java.util.HashMap;
@@ -23,7 +25,6 @@ public class TimeZoneTesting {
         // Navigate to a website to verify timezone
         driver.get("https://whatismytimezone.com/");
         System.out.println(driver.findElement(By.tagName("article")).getText());
-
 
         driver.close();
     }

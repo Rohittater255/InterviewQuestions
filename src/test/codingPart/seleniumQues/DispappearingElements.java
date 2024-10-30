@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
 import java.util.List;
@@ -16,6 +17,7 @@ public class DispappearingElements {
     @Test
     public void handleDisappearingElement() throws InterruptedException {
         WebDriver driver = new ChromeDriver();
+        WebDriver driver1 = new FirefoxDriver();
 
         //Navigate to Flipkart
         driver.get("https://www.flipkart.com/");

@@ -8,4 +8,8 @@
 8) How to disable a Test
 9) Retry Mechanism
 10) Re-Run failed Test cases
+11) types of assertions in Testng that you have uses--> assertTrue , assertfalse, assertEquals, assertNotEquals, assertNull, assertNotNull
 11) What is diff between soft assertions and hard assertions
+12) Assert.assertEquals()  vs  Assert.assertEqualsDeep()
+13) Assert.assertEquals() vs Assert.assertSame()
+

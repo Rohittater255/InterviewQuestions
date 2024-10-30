@@ -1,0 +1,96 @@
+Jenkins Tutorial: https://www.youtube.com/watch?v=7KCS70sCoK0
+
+- What is Pipeline
+- Difference between pipeline and Job
+- Types of Jenkins Pipeline:
+     - Scripted
+     - Declarative
+- Difference between Different Jenkins Pipeline:
+     - Scripted Pipeline allows flexibility
+     - 'Restart From Stage' is allowed in Declarative Pipeline
+     - 'Conditional Skipping' is allowed in Declarative Pipeline
+
+##Syntax of Scripted pipeline ###
+nodes{
+		stages{
+			stage("build"){
+				steps{
+					echo 'buidling the application'
+				}
+			}
+			stage("test"){
+				steps{
+					echo 'testing the application'
+				}
+			}
+			stage("deploy"){
+				steps{
+					echo 'deploying the application'
+				}
+			}
+
+
+		}
+}
+
+
+##Syntax of Declarative pipeline ###
+
+pipeline{
+	agent any{
+		stages{
+			stage("build"){
+				steps{
+					echo 'buidling the application'
+				}
+			}
+			stage("test"){
+				steps{
+					echo 'testing the application'
+				}
+			}
+			stage("deploy"){
+				steps{
+					echo 'deploying the application'
+				}
+			}
+
+
+		}
+	}
+}
+
+
+- How will you configure jenkins job that runs at 2 am at night
+- How will you configure jenkins with credentials
+	- Download Credentials and CredentialsBinding Plugin
+	https://www.youtube.com/watch?v=yfjtMIDgmfs
+
+- How will you configure jenkins job wich can run for different branch: https://www.youtube.com/watch?app=desktop&v=wayuJxKerCc
+
+- How will you configure jenkins job wich can run for different para,meter
+http://localhost:8080/env-vars.html/
+
+CODE_CHANGES = getGitChanges()
+pipeline {
+  agent any
+  parameters {
+    string(name: 'BRANCH_NAME', defaultValue: 'main', description: 'Branch to build')
+  }
+  stages {
+    stage('Checkout') {
+      steps {
+        // Checkout the specified branch
+        checkout([$class: 'GitSCM', branches: [[name: "${params.BRANCH_NAME}"]],
+             userRemoteConfigs: [[url: 'https://your-repo-url.git']]])
+      }
+    }
+    stage('Build') {
+      steps {
+        // Your build steps here
+        echo "Building branch ${params.BRANCH_NAME}"
+      }
+    }
+  }
+}
+

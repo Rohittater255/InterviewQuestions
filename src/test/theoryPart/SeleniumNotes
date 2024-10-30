@@ -12,7 +12,7 @@
   - What is latest version of selenium/selenium-grid. What are the changes in the latest version?
 
 2)  Wait
-   -  Types Of Wait
+   - Types Of Wait
    - What is default time in Implicit wait?
    - What is default pollingtime in Explicit wait?
 
@@ -93,6 +93,9 @@ String js2 ="arguments[0].setAttribute('value','aa')";
     Action: interface
     By: class
     Select: class
+    Alert: Interface
+
+5) Topmost interface in Selenium: SearchContext
 
 5) Limitation of Selenium-->https://www.youtube.com/watch?v=sbswAkXXOFY&t=12s
     a)Captcha

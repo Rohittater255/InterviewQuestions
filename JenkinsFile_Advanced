@@ -1,0 +1,97 @@
+pipeline {
+    agent any
+
+    options {
+        disableConcurrentBuilds()
+        timestamps()
+        buildDiscarder(logRotator(numToKeepStr: '25', daysToKeepStr: '60', artifactDaysToKeepStr: '7', artifactNumToKeepStr: '5'))
+    }
+
+    parameters {
+        choice(name: 'version', choices: ['1.0', '1.1', '2.0'], description: 'Select the version')
+        booleanParam(name: 'executeTests', defaultValue: true, description: 'Execute Tests')
+        string(name: 'branch', defaultValue: 'main', description: 'Branch to build')
+    }
+
+    stages {
+        stage("build") {
+            steps {
+                script {
+                    buildApplication()
+                }
+                echo "Selected Version: ${params.version}"
+                echo "Building branch: ${params.branch}"
+            }
+        }
+
+        stage("test") {
+            when {
+                expression { return params.executeTests }
+            }
+            steps {
+                script {
+                    testApplication()
+                }
+                echo "Selected Version: ${params.version}"
+                echo "Testing branch: ${params.branch}"
+            }
+        }
+
+        stage("deploy") {
+            steps {
+                script {
+                    deployApplication()
+                }
+                echo "Selected Version: ${params.version}"
+                echo "Deploying branch: ${params.branch}"
+            }
+        }
+    }
+
+    post {
+        always {
+            script {
+                def passPercentage = 80
+                echo "Build completed. Pass percentage: ${passPercentage}%"
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+def buildApplication() {
+    echo 'Executing build script...'
+    // Add your build script commands here
+    echo 'Building the application'
+}
+
+def testApplication() {
+    echo 'Executing test script...'
+    // Add your test script commands here
+    echo 'Testing the application'
+}
+
+def deployApplication() {
+    echo 'Executing deploy script...'
+    // Add your deploy script commands here
+    echo 'Deploying the application'
+}
