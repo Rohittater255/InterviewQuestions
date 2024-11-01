@@ -1,0 +1,265 @@
+-- Reference Material: https://www.w3schools.com/sql/sql_count_avg_sum.asp
+
+-- create a table
+CREATE TABLE cricketer (
+  id INTEGER PRIMARY KEY AUTO_INCREMENT,
+  jerseyNumber INTEGER UNIQUE,
+  firstname VARCHAR(50) NOT NULL,
+  lastname VARCHAR(50) NOT NULL,
+  gender BOOLEAN NOT NULL,
+  country VARCHAR(50) DEFAULT  'India',
+  noOfCenturies INTEGER NOT NULL,
+  dateOfBirth DATE NOT NULL,
+  average DECIMAL(5, 2) CHECK (average >= 0),
+  debutYear YEAR,
+  weight FLOAT CHECK (weight > 0),
+  description TEXT,
+  photo BLOB
+);
+
+
+
+-- insert some values
+INSERT INTO cricketer (id, jerseyNumber, firstname, lastname, gender,country, noOfCenturies, dateOfBirth, average, debutYear, weight, description, photo) VALUES
+(1,7, 'Mahendra Singh', 'Dhoni', 1,'India', 16, '1981-07-07', 50.57, 2004, 75.0, 'Captain Cool and one of the finest finishers in limited-overs cricket', 'https://example.com/photos/dhoni.jpg'),
+(2,10, 'Sachin', 'Tendulkar', 1,'India', 100, '1973-04-24', 53.78, 1989, 67.5, 'The Master Blaster with the highest number of runs in international cricket', 'https://example.com/photos/tendulkar.jpg'),
+(3,12, 'Yuvraj', 'Singh', 1,'India', 17, '1981-12-12', 36.56, 2000, 78.0, 'Known for his six sixes in an over and his heroic comeback from cancer', 'https://example.com/photos/yuvraj.jpg'),
+(4,18, 'Virat', 'Kohli', 1,'India', 71, '1988-11-05', 59.07, 2008, 70.0, 'Modern-day great with aggressive captaincy and impeccable chasing record', 'https://example.com/photos/kohli.jpg'),
+(5,45, 'Rohit', 'Sharma', 1,'India', 41, '1987-04-30', 48.96, 2007, 72.5, 'Hitman known for his double centuries in ODIs', 'https://example.com/photos/rohit.jpg'),
+(6,60, 'Rahul', 'Dravid', 1,'India', 36, '1973-01-11', 52.31, 1996, 75.0, 'The Wall of Indian cricket with immense patience and consistency', 'https://example.com/photos/dravid.jpg'),
+(7,70, 'Ishant', 'Sharma', 1,'India', 0, '1988-09-02', 24.15, 2007, 84.0, 'Fast bowler known for his height and pace', 'https://example.com/photos/ishant.jpg'),
+(8,80, 'Amol', 'Muzumdar', 1,'India', 0, '1959-01-06', 0, NULL, 78.0, 'Amol Muzumdar neever played for India', NULL),
+(9,90, 'Shafali', 'Verma', 0,'India', 4, '2004-01-28', 27.45, 2019, 60.0, 'Young batting prodigy with explosive power hitting', 'https://example.com/photos/shafali.jpg'),
+(10,100, 'Harmanpreet', 'Kaur', 0,'India', 3, '1989-03-08', 34.25, 2009, 65.0, 'Dynamic all-rounder and captain of the Indian women’s cricket team', 'https://example.com/photos/harmanpreet.jpg'),
+(11,17, 'AB', 'de Villiers', 1, 'South Africa', 47, '1984-02-17', 50.66, 2004, 74.0, 'Mr. 360 known for his innovative shots and versatility', 'https://example.com/photos/abdevilliers.jpg'),
+(12,50, 'Graeme', 'Smith', 1, 'South Africa', 27, '1981-02-01', 48.25, 2002, 88.0, 'South African captain known for his leadership and batting prowess', 'https://example.com/photos/graemesmith.jpg');
+
+-- Create Footballer table
+CREATE TABLE footballer (
+  id INTEGER PRIMARY KEY,
+jerseyNumber INTEGER UNIQUE,
+  firstname VARCHAR(50) NOT NULL,
+  lastname VARCHAR(50) NOT NULL,
+  gender BOOLEAN NOT NULL,
+  goalsScored INTEGER NOT NULL,
+  dateOfBirth DATE NOT NULL,
+  averageGoalsPerMatch DECIMAL(5, 2),
+  debutYear YEAR,
+  weight FLOAT CHECK (weight > 0),
+  description TEXT,
+  photo BLOB
+);
+
+-- Insert values for Ronaldo, Messi, and Neymar
+INSERT INTO footballer (id,jerseyNumber, firstname, lastname, gender, goalsScored, dateOfBirth, averageGoalsPerMatch, debutYear, weight, description, photo) VALUES
+(1,7, 'Cristiano', 'Ronaldo', 1, 674, '1985-02-05', 0.73, 2002, 84.0, 'One of the greatest footballers of all time with numerous records', 'https://example.com/photos/ronaldo.jpg'),
+(2,10, 'Lionel', 'Messi', 1, 672, '1987-06-24', 0.81, 2004, 72.0, 'Arguably the best player in the history of the sport with incredible dribbling and scoring abilities', 'https://example.com/photos/messi.jpg'),
+(3,9, 'Neymar', 'Junior', 1, 311, '1992-02-05', 0.61, 2009, 68.0, 'Brazilian star known for his flair, dribbling skills, and goal-scoring prowess', 'https://example.com/photos/neymar.jpg');
+
+
+
+-- ##################### Basic SQL Queries  #####################
+-- SELECT * FROM cricketer;
+-- SELECT DISTINCT firstname FROM cricketer;// Distinct
+
+-- ##################### WHERE condition  #####################
+-- SELECT * FROM cricketer WHERE gender = 0; -- search all female cricketer
+-- SELECT firstname,noOfCenturies FROM cricketer WHERE noOfCenturies > 16 and noOfCenturies < 31; -- greater than, smaller than
+-- SELECT firstname,noOfCenturies FROM cricketer WHERE noOfCenturies >= 16 and noOfCenturies <= 31; -- greater than equalTo, smaller than equalTo
+-- SELECT firstname,noOfCenturies FROM cricketer WHERE noOfCenturies BETWEEN 16 and  31; -- BETWEEN clause is inclusive
+-- SELECT firstname,noOfCenturies FROM cricketer WHERE noOfCenturies NOT BETWEEN 16 AND 31; -- Not BETWEEN clause is inclusive
+-- SELECT firstname,noOfCenturies FROM cricketer WHERE firstname IN ('Sachin', 'Virat', 'Rohit'); -- IN Operator
+-- SELECT firstname,noOfCenturies FROM cricketer WHERE firstname NOT IN ('Sachin', 'Virat', 'Rohit'); -- Not IN Operator
+-- SELECT firstname,noOfCenturies FROM cricketer WHERE average IS NULL;
+-- SELECT firstname,noOfCenturies FROM cricketer WHERE average IS NOT NULL ;
+-- SELECT firstname,noOfCenturies FROM cricketer WHERE noOfCenturies BETWEEN 16 and  31 OR firstname ='Sachin'; -- and+OR Operator
+
+
+-- ##################### Like and Underscore  #####################
+-- Select firstname from cricketer where firstname  like '%R%'; -- firstname having R
+-- Select firstname from cricketer where firstname  like 'R%'; -- firstname Starting with R
+-- Select firstname from cricketer where firstname  like '%R'; -- firstname Ending with R
+
+-- Select firstname from cricketer where firstname  like 'Rohi_'; -- underscore
+-- Select firstname from cricketer where firstname  like 'R____'; -- underscore
+-- Select firstname from cricketer where firstname  like 'R___%'; -- underscore and percentage
+
+-- ##################### ORDER BY  #####################
+-- SELECT country,  noOfCenturies, firstname  FROM cricketer ORDER BY  noOfCenturies asc;  -- single column
+-- SELECT country,  noOfCenturies,firstname  FROM cricketer ORDER BY country desc, noOfCenturies asc;  -- multiple column
+
+-- ##################### GROUP BY  #####################
+-- SELECT country,  AVG(noOfCenturies)  FROM cricketer GROUP BY country; -- basic
+-- SELECT country,  AVG(noOfCenturies)  FROM cricketer GROUP BY country order by country desc; --  group by with order by(Correct)
+-- SELECT country,  AVG(noOfCenturies)  FROM cricketer order by country desc GROUP BY country ; -- group by with order by(Wrong)
+-- SELECT country,  AVG(noOfCenturies)  FROM cricketer   where gender=1 GROUP BY country; --  group by with Where Clause(Correct)
+-- SELECT country,  AVG(noOfCenturies)  FROM cricketer  GROUP BY country where gender=1; -- group by with Where Clause(Wrong)
+-- SELECT country,  AVG(noOfCenturies) as AVG FROM cricketer GROUP BY country having AVG(weight); --  group by with having(Correct)
+
+-- ##################### Query with Group by, order by, where and having  #####################
+-- SELECT country, AVG(noOfCenturies) AS AverageCenturies
+-- FROM cricketer
+-- WHERE gender = 1
+-- GROUP BY country
+-- HAVING COUNT(*) >= 2
+-- ORDER BY AverageCenturies DESC;
+
+-- ##################### kth max-min  #####################
+-- SELECT * FROM cricketer ORDER BY dateOfBirth DESC LIMIT 1;-- Youngest Cricketer
+-- SELECT * FROM cricketer ORDER BY dateOfBirth DESC LIMIT 1 OFFSET 3;-- 3rd Youngest Cricketer
+-- SELECT * FROM cricketer ORDER BY dateOfBirth ASC LIMIT 1;-- Oldest Cricketer
+-- SELECT * FROM cricketer ORDER BY dateOfBirth ASC LIMIT 1 OFFSET 3;-- 3rd Oldest Cricketer
+
+-- #####################   COUNT, Average, SUM #####################
+-- SELECT country, COUNT(noOfCenturies)  as noOfCenturies  FROM cricketer GROUP BY country;
+-- SELECT country, AVG(noOfCenturies)  as noOfCenturies FROM cricketer GROUP BY country ;
+-- SELECT country, SUM(noOfCenturies)  as noOfCenturiest FROM cricketer GROUP BY country ;
+-- SELECT country, MAX(noOfCenturies)  as noOfCenturiest FROM cricketer GROUP BY country ;
+-- SELECT country, MIN(noOfCenturies)  as noOfCenturiest FROM cricketer GROUP BY country ;
+
+
+-- ##################### Functions  #####################
+-- SELECT CONCAT(firstname," ", lastname) as name FROM cricketer; -- Concat Name of cricketer
+-- SELECT firstname, lastname,   FLOOR(DATEDIFF(CURDATE(), dateOfBirth) / 365.25) AS Age FROM cricketer;
+-- SELECT firstname, lastname,   CEIL(DATEDIFF(CURDATE(), dateOfBirth) / 365.25) AS Age FROM cricketer;
+-- SELECT firstname, LENGTH(firstname) as nameLength FROM cricketer;
+-- SELECT firstname, SUBSTRING(firstname, 1, 3) as sub FROM cricketer;
+-- SELECT firstname, UPPER(firstname) as upper FROM cricketer;
+-- SELECT average, ROUND(average, 1) as avg FROM cricketer;
+-- SELECT COALESCE(description, 'No Description') FROM cricketer; -- Returns the first non-null value in a list.
+
+
+
+
+
+
+
+
+
+
+-- #####################  UPDATE  #####################
+-- select firstname,description from cricketer where firstname ='Graeme'; -- Before Update
+-- update cricketer  set description ='Former South African captain' where  firstname ='Graeme';  -- Run Update
+-- select firstname,description from cricketer where firstname ='Graeme'; -- After Update
+
+-- #####################  INSERT  #####################
+-- select count(*) from cricketer; -- Before insert
+-- INSERT INTO cricketer (id, jerseyNumber, firstname, lastname, gender, country, noOfCenturies, dateOfBirth, average, debutYear, weight, description, photo) VALUES
+-- (13,110, 'Jasprit', 'Bumrah', 1, 'India', 0, '1993-12-06', 22.58, 2016, 70.0, 'One of the premier fast bowlers with a unique bowling action', 'https://example.com/photos/bumrah.jpg');
+-- select count(*) from cricketer; -- Before insert
+
+-- #####################  DELETE  #####################
+-- select count(*) from cricketer; -- Before delete
+-- DELETE from cricketer  where firstname ='Graeme';  -- Run Delete
+-- select count(*) from cricketer; -- Before delete
+
+-- #####################  TRUNCATE  #####################
+-- select count(*) from cricketer; -- Before Truncate
+-- TRUNCATE cricketer;  -- Run Truncate
+-- select count(*) from cricketer; -- Before Truncate
+
+-- #####################  DROP  #####################
+-- select count(*) from cricketer; -- Before DROP
+-- DROP cricketer;  -- Run DROP
+-- select count(*) from cricketer; -- Before DROP-- YOu will get error here
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- #####################  JOINS  #####################
+-- Find footballers who use same t-Shirt number
+-- select c.firstname AS cricketerName, f.firstname AS footballerName
+-- from cricketer c
+-- INNER JOIN footballer f
+-- ON c.jerseyNumber = f.jerseyNumber;
+
+-- LEFt JOIN
+-- select c.firstname AS cricketerName, f.firstname AS footballerName
+-- from cricketer c
+-- LEFT JOIN footballer f
+-- ON c.jerseyNumber = f.jerseyNumber;
+
+-- RIGHT JOIN
+-- select c.firstname AS cricketerName, f.firstname AS footballerName
+-- from cricketer c
+-- RIGHT JOIN footballer f
+-- ON c.jerseyNumber = f.jerseyNumber;
+
+## OUTER JOIN( Mysql Doesnt support Outer Join, So we can use LEFT Join + Union + Right Join  ###
+-- select c.firstname AS cricketerName, f.firstname AS footballerName
+-- from cricketer c
+-- LEFT JOIN footballer f
+-- ON c.jerseyNumber = f.jerseyNumber
+-- UNION
+-- select c.firstname AS cricketerName, f.firstname AS footballerName
+-- from cricketer c
+-- RIGHT JOIN footballer f
+-- ON c.jerseyNumber = f.jerseyNumber;
+
+-- SELF JOIN
+-- select c.firstname AS cricketerName, f.firstname AS footballerName
+-- from cricketer c
+-- FULL OUTER JOIN footballer f
+-- ON c.jerseyNumber = f.jerseyNumber;
+
+--  UNION
+-- SELECT * FROM cricketer WHERE weight = (SELECT MAX(weight) FROM cricketer)
+-- UNION
+-- SELECT * FROM cricketer WHERE weight = (SELECT MIN(weight) FROM cricketer);
+
+
+
+
+-- #####################  CONSTRAINTS  #####################
+-- Check Primary Key Constraint: Pass id =1
+-- INSERT INTO cricketer (id,jerseyNumber, firstname, lastname, gender, country, noOfCenturies, dateOfBirth, average, debutYear, weight, description, photo) VALUES
+-- (1,110, 'Jasprit', 'Bumrah', 1, 'India', 0, '1993-12-06', 22.58, 2016, 70.0, 'One of the premier fast bowlers with a unique bowling action', 'https://example.com/photos/bumrah.jpg');
+
+-- Check UNIQUE Constraint: jerseyNumber =7
+-- INSERT INTO cricketer (id,jerseyNumber, firstname, lastname, gender, country, noOfCenturies, dateOfBirth, average, debutYear, weight, description, photo) VALUES
+-- (100,7, 'Jasprit', 'Bumrah', 1, 'India', 0, '1993-12-06', 22.58, 2016, 70.0, 'One of the premier fast bowlers with a unique bowling action', 'https://example.com/photos/bumrah.jpg');
+
+-- Check NOT NULL Constraint: Pass firstname =NULL
+-- INSERT INTO cricketer (id,jerseyNumber, firstname, lastname, gender, country, noOfCenturies, dateOfBirth, average, debutYear, weight, description, photo) VALUES
+-- (100,110, NULL, 'Bumrah', 1, 'India', 0, '1993-12-06', 22.58, 2016, 70.0, 'One of the premier fast bowlers with a unique bowling action', 'https://example.com/photos/bumrah.jpg');
+
+-- Check CHECK Constraint: Passing weight =0
+-- INSERT INTO cricketer (id,jerseyNumber, firstname, lastname, gender, country, noOfCenturies, dateOfBirth, average, debutYear, weight, description, photo) VALUES
+-- (100,110, 'Jasprit', 'Bumrah', 1, 'India', 0, '1993-12-06', 22.58, 2016, 0, 'One of the premier fast bowlers with a unique bowling action', 'https://example.com/photos/bumrah.jpg');
+
+-- Check DEFAULT Constraint: Not passing Country in Insert Statment
+-- INSERT INTO cricketer (id,jerseyNumber, firstname, lastname, gender, noOfCenturies, dateOfBirth, average, debutYear, weight, description, photo) VALUES
+-- (100,99, 'Jasprit', 'Bumrah', 1,   0, '1993-12-06', 22.58, 2016, 70.0, 'One of the premier fast bowlers with a unique bowling action', 'https://example.com/photos/bumrah.jpg');
+
+-- select firstname,country from cricketer where firstname= 'Jasprit';
+
+
+-- Check DEFAULT Constraint: Not passing 'id' in Insert Statment
+-- INSERT INTO cricketer ( jerseyNumber, firstname, lastname, gender, country, noOfCenturies, dateOfBirth, average, debutYear, weight, description, photo) VALUES
+-- ( 110, 'Jasprit', 'Bumrah', 1, 'India', 0, '1993-12-06', 22.58, 2016, 12, 'One of the premier fast bowlers with a unique bowling action', 'https://example.com/photos/bumrah.jpg');
+
+-- select id, firstname,country from cricketer where firstname= 'Jasprit';
+
+
+-- DATES
+-- Select  CURRENT_DATE;
+-- Select  DATEDIFF(CURDATE(),dateOfBirth ) from cricketer;
+Select FLOOR( DATEDIFF(CURDATE(),dateOfBirth ) / 365.25) as DOB from cricketer;

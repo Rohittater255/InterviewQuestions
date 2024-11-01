@@ -6,7 +6,7 @@ public class SortedArray {
 
     public static void main(String[] args) {
 //        int[] arr = {2, 4, 6, 0, 7};
-        int[] arr = {2, 4, 6, 7, 7};
+        int[] arr = {2, 4, 6, 7, 9};
 
         boolean flag = checkSorted(arr, 0);
         System.out.println("Sorted:- " + flag);

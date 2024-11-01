@@ -78,3 +78,16 @@ Refer: https://www.youtube.com/watch?v=h9twuFNNzSk
         It first cleans the project directory by removing previous build artifacts, and then it compiles,
         tests, packages, and installs the project into the local repository.
         This is commonly used to ensure you're building from scratch and the artifacts are up-to-date.
+
+Here are some useful Maven commands that are often asked in interviews:
+
+    mvn clean: Cleans the project by removing the target directory.
+    mvn compile: Compiles the source code of the project.
+    mvn test: Runs the unit tests in the project.
+    mvn package: Packages the compiled code into a JAR or WAR file.
+    mvn install: Installs the package into the local Maven repository, for use as a dependency in other projects locally.
+    mvn deploy: Deploys the package to a remote repository.
+    mvn dependency:tree: Displays the dependency tree of the project.
+    mvn clean install: Cleans the project, compiles the code, runs the tests, and packages the code into a JAR or WAR file.
+    mvn site: Generates a project site that includes documentation, test results, and other information.
+    mvn help:evaluate -Dexpression=project.version: Evaluates and prints the project version.

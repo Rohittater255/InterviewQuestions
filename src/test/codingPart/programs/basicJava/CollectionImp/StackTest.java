@@ -1,4 +1,4 @@
-package codingPart.programs.CollectionImp;
+package codingPart.programs.basicJava.CollectionImp;
 
 import java.util.Vector;
 

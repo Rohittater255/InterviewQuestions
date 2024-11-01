@@ -98,11 +98,10 @@ Reference Videos
    - Example: Integer a=5; - Reference 'a' will stored in stack and value '5' will be stored in heap
  c) local variables(non-primitive) - Reference will stored in stack and value will be stored in heap
    - Example: String a="5"; - Reference 'a' will stored in stack and value '5' will be stored in heap
- d) class methods - Metaspace
  e) reference variables- Stack
  f) instance variables? - Heap
  g) Static variables(Class Variables) - Metaspace
- h) Static methods - Metaspace
+ h) Static methods/class methods - Metaspace
 
 
 2) What is parts of Heap memory?
@@ -154,9 +153,64 @@ Reference Video: https://www.youtube.com/watch?v=TpYIcJN9EV8
 Process is instance of program that is being executed.
 Thread is the smallest set of instruction that is be executed by CPU
 
-############# Design Pattern #############
-1) SingleTon Class
 
+############# Sorting Algorithm #############
+
+1) Bubble Sort
+    Explanation: Repeatedly steps through the array, compares adjacent elements and
+    swaps them if they are in the wrong order.
+
+    Example:
+        Initial Array: {3, 1, 4, 2}
+        After 1st Pass: {1, 3, 4, 2}
+        After 2nd Pass: {1, 3, 2, 4}
+        After 3rd Pass: {1, 2, 3, 4}
+
+    Time Complexity: O(n²)
+    Space Complexity: O(1)
+    Usage: Simple to understand and implement, but inefficient for large datasets.
+
+2) Selection Sort
+    Explanation: Selects the smallest element from the unsorted part and
+    swaps it with the first unsorted element.
+
+    Example:
+        Initial Array: {3, 1, 4, 2}
+        After 1st Pass: {1, 3, 4, 2}
+        After 2nd Pass: {1, 2, 4, 3}
+        After 3rd Pass: {1, 2, 3, 4}
+
+    Time Complexity: O(n²)
+    Space Complexity: O(1)
+    Usage: Good for small datasets, but generally outperformed by other O(n²) algorithms.
+
+3) Merge Sort
+    Explanation: Divides the array into halves, sorts them, and merges the sorted halves.
+
+    Example:
+        Initial Array: {3, 1, 4, 2}
+        Divide: {3, 1} and {4, 2}
+        Sort: {1, 3} and {2, 4}
+        Merge: {1, 2, 3, 4}
+
+    Time Complexity: O(n log n)
+    Space Complexity: O(n)
+    Usage: Stable and efficient for large datasets, but uses more memory.
+
+4) Quick Sort
+    Explanation: Selects a pivot, partitions the array around the pivot, and
+    recursively sorts the partitions.
+
+    Example:
+        Initial Array: {3, 1, 4, 2}
+        Pivot: 3
+        Partition: {1, 2}, {3}, {4}
+        Sort: {1, 2} and {4}
+        Merge: {1, 2, 3, 4}
+
+    Time Complexity: O(n log n) average, O(n²) worst case
+    Space Complexity: O(log n)
+    Usage: Fast and efficient for in-memory sorting, but not stable.
 
 
 ############# Reflection #############
@@ -164,3 +218,5 @@ Thread is the smallest set of instruction that is be executed by CPU
 1)What is java Reflection?
 Java reflection is an API that provides the ability to inspect
 and modify the runtime behavior of applications running in the Java Virtual Machine (JVM).
+
+

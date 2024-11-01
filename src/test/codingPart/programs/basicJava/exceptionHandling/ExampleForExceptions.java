@@ -1,10 +1,11 @@
-package codingPart.programs.exceptionHandling;
+package codingPart.programs.basicJava.exceptionHandling;
 
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
+import java.util.Optional;
 
 public class ExampleForExceptions {
 
@@ -15,9 +16,16 @@ public class ExampleForExceptions {
         String sa = "";
         System.out.println("Not Example of Null pointer exception: " + sa.toLowerCase());
 
-        String s = null;
-        System.out.println("Example of Null pointer exception: " + s.toLowerCase());
+        try {
+            String s = null;
+            System.out.println("Example of Null pointer exception: " + s.toLowerCase());
+        } catch (NullPointerException e) {
+            // Handle the exception
+            System.err.println("NullPointerException: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
+
 
     //    @Test
 //    public void exampleOfInitializationError(){
@@ -46,7 +54,7 @@ public class ExampleForExceptions {
     @Test
     public void exampleOfArithmeticException() {
         try {
-            System.out.println(10/0);
+            System.out.println(10 / 0);
         } catch (ArithmeticException e) {
             // Handle the exception
             System.err.println("ArithmeticException: " + e.getMessage());
@@ -96,4 +104,28 @@ public class ExampleForExceptions {
                 throw new NoClassDefFoundError("Simulated NoClassDefFoundError");
         }
     }
+
+
+    //Thread Exception
+    public class ThreadClass extends Thread {
+
+        public void run() {
+        }
+
+        @Test
+        public void exampleOfThreadException() {
+            try {
+                ThreadClass tc = new ThreadClass();
+                tc.start();
+                tc.start();
+            } catch (IllegalThreadStateException e) {
+                System.err.println("IllegalThreadStateException: " + e.getMessage());
+                e.printStackTrace();
+            }
+
+        }
+
+    }
+
 }
+

@@ -3,6 +3,7 @@ package codingPart.programs.basicJava;
 import org.testng.annotations.Test;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class ArrayListQues {
 
@@ -37,7 +38,7 @@ public class ArrayListQues {
     }
 
     @Test()
-    public void findCommonElements_3Arrays() {
+    public void findCommonElements_3ArrayList() {
         ArrayList<String> list1 = new ArrayList<>(Arrays.asList("A", "B", "C"));
         ArrayList<String> list2 = new ArrayList<>(Arrays.asList("A", "B", "D"));
         ArrayList<String> list3 = new ArrayList<>(Arrays.asList("E", "B", "D"));
@@ -48,17 +49,17 @@ public class ArrayListQues {
     }
 
     @Test
-    public void findDuplicateInArray() {
+    public void findDuplicateInArraylist() {
 
-        ArrayList<String> arrList = new ArrayList<>();
-        arrList.add("a");
-        arrList.add("b");
-        arrList.add("c");
-        arrList.add("a");
-        arrList.add("a");
-        HashMap<String, Integer> hashmap = new HashMap<String, Integer>();
-        for (int i = 0; i < arrList.size(); i++) {
-            hashmap.put(arrList.get(i), hashmap.getOrDefault(arrList.get(i), 0) + 1);
+        ArrayList<String> list = new ArrayList<>();
+        list.add("a");
+        list.add("b");
+        list.add("c");
+        list.add("a");
+        list.add("a");
+        HashMap<String, Integer> hashmap = new HashMap<>();
+        for (int i = 0; i < list.size(); i++) {
+            hashmap.put(list.get(i), hashmap.getOrDefault(list.get(i), 0) + 1);
         }
 
         System.out.println("Below are Duplicate Elements");
@@ -69,17 +70,17 @@ public class ArrayListQues {
     }
 
     @Test
-    public void findUniqueInArray() {
+    public void findUniqueInArrayList() {
 
-        ArrayList<String> arrList = new ArrayList<>();
-        arrList.add("a");
-        arrList.add("b");
-        arrList.add("c");
-        arrList.add("a");
+        ArrayList<String> list = new ArrayList<>();
+        list.add("a");
+        list.add("b");
+        list.add("c");
+        list.add("a");
 
-        HashMap<String, Integer> hashmap = new HashMap<String, Integer>();
-        for (int i = 0; i < arrList.size(); i++) {
-            hashmap.put(arrList.get(i), hashmap.getOrDefault(arrList.get(i), 0) + 1);
+        HashMap<String, Integer> hashmap = new HashMap<>();
+        for (int i = 0; i < list.size(); i++) {
+            hashmap.put(list.get(i), hashmap.getOrDefault(list.get(i), 0) + 1);
         }
 
         System.out.println("Below are Unique Elements");
@@ -92,29 +93,52 @@ public class ArrayListQues {
     @Test
     public void removeDuplicateInArray() {
 
-        ArrayList<String> arrList = new ArrayList<>();
-        arrList.add("a");
-        arrList.add("b");
-        arrList.add("c");
-        arrList.add("a");
-        String[] arr;
+        ArrayList<String> list = new ArrayList<>();
+        list.add("a");
+        list.add("b");
+        list.add("c");
+        list.add("a");
 
-        LinkedHashSet<String> hashSet = new LinkedHashSet<String>(arrList);
+        LinkedHashSet<String> hashSet = new LinkedHashSet<>(list);
         System.out.println(hashSet.size());
-        arrList = new ArrayList<>(hashSet);
+        list = new ArrayList<>(hashSet);
 
-        for (int i = 0; i < arrList.size(); i++) {
-            System.out.println("arrList--> " + arrList.get(i));
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println("list--> " + list.get(i));
         }
 
 
-        HashSet<String> hashSet1 = new HashSet<>(arrList);
+        HashSet<String> hashSet1 = new HashSet<>(list);
         System.out.println(hashSet1.size());
-        arrList = new ArrayList<>(hashSet1);
+        list = new ArrayList<>(hashSet1);
 
-        for (int i = 0; i < arrList.size(); i++) {
-            System.out.println("arrList--> " + arrList.get(i));
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println("list--> " + list.get(i));
         }
+    }
+
+    @Test
+    public void findUniqueDuplicate() {
+
+        ArrayList<String> list = new ArrayList<>();
+        list.add("a");
+        list.add("b");
+        list.add("c");
+        list.add("a");
+
+
+        System.out.println("Print All Elements:- "+list.stream().sorted().toList());
+        System.out.println("Print Unique Elements:- "+list.stream().distinct().sorted().toList());
+
+        Set<String> allItems = new HashSet<>();
+        List<String> duplicateElements = list.stream()
+                .filter(e -> !allItems.add(e))
+                .distinct()
+                .toList();
+        System.out.println("Print Duplicate Elements: " + duplicateElements);
+
+
+
     }
 
 }
