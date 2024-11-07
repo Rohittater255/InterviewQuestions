@@ -9,6 +9,7 @@ import org.openqa.selenium.logging.LogEntry;
 import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
@@ -31,6 +32,7 @@ public class SeleniumBasics {
     @BeforeTest(alwaysRun = true)
     public void setup() throws MalformedURLException {
         ChromeOptions options = new ChromeOptions();
+
         options.addArguments("--start-maximized");
         options.addArguments("--disable-notifications");//handle notification
         options.addArguments("--ignore-certificate-errors");//handle SSl
@@ -205,6 +207,7 @@ public class SeleniumBasics {
         js.executeScript("document.querySelector('downloads-manager').shadowRoot.querySelector('#toolbar').shadowRoot.querySelector('#toolbar').shadowRoot.querySelector('#search').shadowRoot.querySelector('#searchInput').click();");
         js.executeScript("document.querySelector('downloads-manager').shadowRoot.querySelector('#toolbar').shadowRoot.querySelector('#toolbar').shadowRoot.querySelector('#search').shadowRoot.querySelector('#searchInput').value='Rohit'");
         TimeUnit.SECONDS.sleep(10);
+
 
 
     }

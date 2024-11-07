@@ -1,9 +1,8 @@
-package codingPart.programs.basicJava;
+package codingPart.programs.basicJava.Java8Features;
 
 import org.testng.annotations.Test;
 import java.util.*;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
 import java.time.LocalDate;
 import java.time.Month;
 

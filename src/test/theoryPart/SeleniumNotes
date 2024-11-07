@@ -30,7 +30,7 @@
   - how to handle pop-up window
   - how to switch to child pop-up window
   - how to switch to main pop-up window
-  - how to switch to get number of pop-up window currently opened
+  - how to get number of pop-up window currently opened
   - return type of driver.getWindowHandles() & driver.getWindowHandle()
   - handle pop up with authentication-->https://the-internet.herokuapp.com/basic_auth
 
@@ -111,11 +111,3 @@ String js2 ="arguments[0].setAttribute('value','aa')";
 - Disappearing Elements
 - Dynamic Content: Handling websites that use AJAX or JavaScript extensively. Handling: Implemented explicit waits to wait for elements to become interactable.
 
-############  Selenium Framework ###########
-Singleton Design Pattern: https://www.youtube.com/watch?v=khnair65cVc&list=PLFGoYjJG_fqpc4jcqbeXqMIT3-60nfLr6
-    Page Object Model (POM):
-    Page Factory:
-    Decorator Patter:
-    Singleton Design Pattern:
-    Data-Driven Design Pattern:
-    Behavior-Driven Development (BDD):

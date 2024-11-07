@@ -66,9 +66,9 @@ pipeline{
 	- Download Credentials and CredentialsBinding Plugin
 	https://www.youtube.com/watch?v=yfjtMIDgmfs
 
-- How will you configure jenkins job wich can run for different branch: https://www.youtube.com/watch?app=desktop&v=wayuJxKerCc
+- How will you configure jenkins job which can run for different branch: https://www.youtube.com/watch?app=desktop&v=wayuJxKerCc
 
-- How will you configure jenkins job wich can run for different para,meter
+- How will you configure jenkins job which can run for different para,meter
 http://localhost:8080/env-vars.html/
 
 CODE_CHANGES = getGitChanges()

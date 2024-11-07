@@ -1,4 +1,4 @@
-package test.codingPart.programs.memoryManagement;
+package  codingPart.programs.basicJava.memoryManagement;
 
 import org.testng.annotations.Test;
 

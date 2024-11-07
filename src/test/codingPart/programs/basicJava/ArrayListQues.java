@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 
 public class ArrayListQues {
 
+
     @Test()
     public void findAdditionalElement() {
         ArrayList<String> list1 = new ArrayList<>(Arrays.asList("A", "B", "C"));
@@ -115,6 +116,7 @@ public class ArrayListQues {
         for (int i = 0; i < list.size(); i++) {
             System.out.println("list--> " + list.get(i));
         }
+
     }
 
     @Test

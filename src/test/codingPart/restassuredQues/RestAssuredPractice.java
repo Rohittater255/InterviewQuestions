@@ -11,9 +11,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.testng.annotations.Test;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 
 public class RestAssuredPractice {
 
@@ -48,6 +46,16 @@ public class RestAssuredPractice {
 
     }
 
+
+    @Test
+    public void runGet2() {
+
+        Response response = RestAssured.given().when().get("https://api.restful-api.dev/objects");
+        System.out.println("Response:- " + response.getBody().asString());
+        System.out.println("Response Code:- " + response.statusCode());
+
+    }
+
     @Test
     public void runGetAndDownloadFile() {
         String url = "https://mozilla.github.io/pdf.js/web/viewer.html"; // Replace with your actual URL
@@ -57,8 +65,7 @@ public class RestAssuredPractice {
              FileOutputStream outputStream = new FileOutputStream("downloaded_file")) {
 
             byte[] buffer = new byte[4096];
-            int bytesRead;
-            while ((bytesRead = inputStream.read(buffer)) != -1) {
+            while (inputStream.read(buffer) != -1) {
                 outputStream.write(buffer);
             }
             System.out.println("File downloaded successfully!");
@@ -113,5 +120,54 @@ public class RestAssuredPractice {
         String contact = JsonPath.using(Configuration.defaultConfiguration()).parse(jsonObject.toString()).read("$.name");
         System.out.println(contact);
     }
+
+    @Test
+    public void jsonObject2() throws JSONException {
+        //        {
+//            "name": "Rohit",
+//                "contact": [
+//            {
+//                "number": "1234567890",
+//            },
+//            {
+//                "number": "0987654321",
+//            }
+//            ]
+//        }
+
+        JSONObject payload = new JSONObject();
+        JSONArray contactArr= new JSONArray();
+        JSONObject json = new JSONObject();
+        JSONObject json2 = new JSONObject();
+        json.put("number","122343243");
+        json2.put("number","122343243");
+        contactArr.put(json);
+        contactArr.put(json2);
+        payload.put("name", "Rohit");
+        payload.put("contact", contactArr );
+
+        System.out.println("payload"+ payload);
+
+    }
+
+//    [
+//    {
+//        "type": 1,
+//            "number": "0123-4567-8888"
+//    },
+//    {
+//        "type": 1,
+//            "number": "0124-4567-8888"
+//    },
+//    {
+//        "type": 2,
+//            "number": "0123-4567-8910"
+//    }
+//    ]
+    //JsonPath
+    //$[?(@.number=~/8888/)].type
+    //$[?(@.type>1 )]
+    //$[?(@.type==1 &&  @.number=='0123-4567-8888')]
+
 
 }

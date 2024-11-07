@@ -1,0 +1,8 @@
+1) bug vs defect vs error vs failure
+    Error is a mistake made by a programmer during coding.
+    Bug is an error detected in the development environment during testing stage.
+    Defect is a mismatch between the expected and actual result of software development detected by a software developer or end customer in the production environment.
+    Failure is called an error which is founded by the end user.
+
+
+https://www.h2kinfosys.com/blog/examples-high-severitypriority-low-severitypriority-defects-current-project/

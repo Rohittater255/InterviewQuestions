@@ -1,2 +1,61 @@
 Strategy: https://www.youtube.com/watch?v=MA9fISK2BHY
 Explain framework: https://www.youtube.com/watch?v=x9vAgJSq2O0
+Design Pattern: : https://www.youtube.com/watch?v=mVIWw59tj84&list=PLFGoYjJG_fqpc4jcqbeXqMIT3-60nfLr6&index=7
+
+############  Selenium Framework ###########
+Singleton Design Pattern: https://www.youtube.com/watch?v=khnair65cVc&list=PLFGoYjJG_fqpc4jcqbeXqMIT3-60nfLr6
+    Page Object Model (POM):
+    Decorator Patter:
+    Strategy Pattern :
+    Factory Pattern :
+    Singleton Design Pattern:
+    Data-Driven Design Pattern:
+    Behavior-Driven Development (BDD):
+
+
+Creation Design Pattern: https://www.youtube.com/watch?v=OuNOyFg942M
+    Prototype
+    Singleton
+    Factory
+    AbstractFactory
+    Builder Pattern
+
+Structural  Design Pattern: https://www.youtube.com/watch?v=WxGtmIBZszk
+ Decorator
+ Proxy
+ Composite
+ Adapter
+ Bridge
+ Facade
+ FlyWeight
+
+What is better  thread=local or singleton to initialize browser during parallel execution?
+
+Performance:
+    ThreadLocal: Can result in better performance in multi-threaded environments due to the reduction in contention and synchronization overhead.
+    Singleton: Might suffer from performance bottlenecks due to synchronization requirements in multi-threaded access.
+
+Thread Safety:
+    ThreadLocal: Each thread has its own independent instance, avoiding conflicts and race conditions. This isolation ensures that no test impacts another.
+    Singleton: A single instance shared across all threads can lead to concurrent modification issues, making it unsuitable for multi-threaded environments.
+
+Parallel Execution:
+    ThreadLocal: Perfect for scenarios requiring parallel execution as each thread handles its own instance.
+    Singleton: Fails in parallel execution, as shared state can cause interference between tests.
+
+Resource Management:
+    ThreadLocal: Efficiently manages resources by ensuring each thread only uses what's necessary.
+    Singleton: May lead to resource contention and inefficient resource utilization since all threads share the same instance.
+
+Test Isolation:
+    ThreadLocal: Guarantees test isolation by providing each test with its own instance, ensuring independence and reducing flakiness.
+    Singleton: Lacks isolation, causing tests to potentially affect each other’s outcomes.
+
+Flexibility:
+    ThreadLocal: More flexible in terms of initialization and teardown, allowing each thread to manage its lifecycle independently.
+    Singleton: Static initialization might cause issues if the state needs to be reset or reinitialized frequently.
+
+
+Ease of Implementation:
+    ThreadLocal: Straightforward to implement in scenarios requiring thread-specific data.
+    Singleton: Requires careful handling of synchronization to ensure thread safety, which can be complex and error-prone.

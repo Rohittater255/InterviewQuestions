@@ -2,6 +2,7 @@ package codingPart.seleniumQues;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
@@ -25,6 +26,7 @@ public class NotificationPop {
         driver.get("https://whatmylocation.com/");
         driver.manage().window().maximize();
         TimeUnit.SECONDS.sleep(100);
+ //       Assert.assertEqualsDeep();
     }
 
 }

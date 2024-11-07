@@ -1,11 +1,12 @@
 package codingPart.programs.basicJava.exceptionHandling;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
-import java.util.Optional;
 
 public class ExampleForExceptions {
 
@@ -125,6 +126,23 @@ public class ExampleForExceptions {
 
         }
 
+    }
+
+
+    @Test
+    public void exampleOfIllegalStateException() {
+
+        //Below will not give null pointer
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://www.google.com/");
+        driver.close();
+        try {
+            driver.get("https://www.google.com/");
+        } catch (IllegalStateException e) {
+            // Handle the exception
+            System.err.println("IllegalStateException: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 
 }

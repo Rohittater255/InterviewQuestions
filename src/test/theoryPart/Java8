@@ -1,0 +1,46 @@
+1) What is functional Interface?
+    A functional interface in Java is an interface with a single abstract method, which makes it perfect for use
+    with lambda expressions and method references. Think of it as a streamlined contract for a function,
+    ensuring simplicity and clarity.
+
+    Example:
+        @FunctionalInterface
+        public interface MyFunctionalInterface {
+            void performAction();
+        }
+
+2) Benefits of Functional Interface
+    Enhanced readability and maintainability: Code becomes cleaner and easier to understand.
+    Concise code: With lambda expressions and method references, you write less boilerplate code.
+    Better modularity: Functional interfaces promote separation of concerns.
+    Parallelism: Stream API, in conjunction with functional interfaces, can harness multi-core architectures efficiently.
+    Interoperability with legacy code: You can use functional interfaces with older Java code, ensuring backward compatibility.
+
+3) What are some built-in functional interfaces in Java?
+    - Consumer<T>
+        Represents an operation that accepts a single input argument and returns no result.
+    - Supplier<T>:
+         Represents a function that takes no argument and produces a result.
+    - Function<T, R>:
+        Represents a function that takes one argument and produces a result.
+    - Predicate<T>:
+        Represents a function that takes a single argument and returns a boolean.
+
+4) What are the potential pitfalls of using functional interfaces, and how can they be mitigated?
+
+    Complexity in debugging: Lambda expressions can be harder to debug.
+    Mitigation: Use descriptive variable names and comments to make lambdas more readable. Employ logging and debugging tools that support lambda expressions.
+
+    Checked exceptions: Lambda expressions can't throw checked exceptions directly.
+    Mitigation: Use wrapper functions or custom functional interfaces that handle checked exceptions.
+
+    Overhead in simple cases: For trivial tasks, using lambdas can introduce unnecessary complexity.
+    Mitigation: Use lambdas judiciously, ensuring they actually simplify the code.
+
+    Overuse and readability: Overusing lambdas can make code hard to read.
+    Mitigation: Balance the use of lambdas with traditional methods for clarity.
+
+    Compatibility issues: Older libraries might not support functional interfaces.
+    Mitigation: When possible, update libraries or use adapter patterns to bridge the gap.
+
+How do you handle exceptions in lambda expressions?

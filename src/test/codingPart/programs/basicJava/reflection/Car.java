@@ -2,7 +2,7 @@ package codingPart.programs.basicJava.reflection;
 
 //Suppose class have 2 variables, with getters and setters.
 // The private String have dont have setter method.
-public   class Car {
+public  class Car {
 
     private String privateString = "I am Private String.";
     public String publicString = "I am Public String.";
@@ -22,4 +22,16 @@ public   class Car {
     public String getPrivateString() {
         return privateString;
     }
+
+
+    // The private constructor
+    public Car(){
+    }
+
+    // The private constructor
+    private Car( String privateString){
+        System.out.println("I am private Constructor");
+        this.privateString = privateString;
+    }
+
 }

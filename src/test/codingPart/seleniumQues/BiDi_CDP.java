@@ -1,10 +1,9 @@
 package codingPart.seleniumQues;
 
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class BiDi_CDP {
@@ -19,13 +18,20 @@ public class BiDi_CDP {
 
 
     @Test
-    public void bidi(){
+    public void bidi() {
         ChromeOptions options = new ChromeOptions();
         options.setCapability("webSocketUrl", true);
         driver = new ChromeDriver();
-        driver.get("https://whatismytimezone.com/");
+        driver.get("https://www.selenium.dev/selenium/web/bidi/logEntryAdded.html");
 
-        System.out.println("Session: "+ driver.getBiDi().getBidiSessionStatus().getMessage());
-        System.out.println("Session: "+ driver.getBiDi().getBidiSessionStatus().getMessage());
+        // Add a listener for log events
+        driver.script().addConsoleMessageHandler((logEntry) -> {
+            System.out.println(logEntry.toString());
+        });
+
+        // Trigger a console log on the demo page
+        driver.findElement(By.id("consoleLog")).click();
+
+        driver.quit();
     }
 }

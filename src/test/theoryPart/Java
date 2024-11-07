@@ -31,8 +31,7 @@ c)  main   method  can be overridden.
 d) abstract  method cannot   be be overridden.
 
 5)Comparator vs comparable
-- Comparator is used to comp
-- For Comparable we will need to implement
+
 
 
 6) What is difference between
@@ -66,6 +65,12 @@ It ensures that only one thread can execute the synchronized code at a time, pre
      // Downcasting Explicitly
      Child c = (Child)p;
 
+12) what is readresolve()
+readResolve() is a method in Java used in the context of serialization.
+ It's part of the Serializable interface, and its main purpose is to ensure
+ that the object being deserialized is replaced with another object.
+ This is particularly useful for maintaining the singleton property or ensuring
+ unique instances after deserialization.
 ############# Strings #############
 
 1) what is String pool?
@@ -98,8 +103,7 @@ Reference Videos
    - Example: Integer a=5; - Reference 'a' will stored in stack and value '5' will be stored in heap
  c) local variables(non-primitive) - Reference will stored in stack and value will be stored in heap
    - Example: String a="5"; - Reference 'a' will stored in stack and value '5' will be stored in heap
- e) reference variables- Stack
- f) instance variables? - Heap
+d) instance variables? - Heap
  g) Static variables(Class Variables) - Metaspace
  h) Static methods/class methods - Metaspace
 

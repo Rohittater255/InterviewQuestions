@@ -140,4 +140,25 @@ public class StringsQues {
         System.out.println("Reverse:- " + Arrays.toString(b));
 
     }
+
+
+    @Test(description = "Get 6 digit number from paragraph")
+    public void stringCompressionAlgorithm() {
+        String s = "aabcccccaaa";//expected output-->// a2b1c5a3
+        StringBuilder sb = new StringBuilder();
+        int count = 1;
+
+        for (int i = 0; i < s.length()  ; i++) {
+            if (i + 1 < s.length() && s.charAt(i) == s.charAt(i + 1)) {
+                count++;
+            } else {
+                sb.append(s.charAt(i)).append(count);
+                count =1;
+            }
+
+
+        }
+        System.out.println("New String "+sb);
+
+    }
 }

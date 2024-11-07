@@ -1,5 +1,8 @@
+Pratctice: https://datalemur.com/questions/sql-ibm-db2-product-analytics
+
 -- ACID Properties
-- Difference between Delete , Truncate and drop
+-- Difference between Delete , Truncate and drop
+-- Difference between denseRank , rank and ROW_NUMBER
 
 ######## Second Highest  salary ########
 SELECT Salary AS SecondHighestSalary

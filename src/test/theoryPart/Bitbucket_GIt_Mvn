@@ -50,7 +50,15 @@
     Get Code for specific file(from master Branch) : git push -f -b myLocalBranchName
 
   3) Rebase, merge
-    Get Full Project(from master branch) : git branch -b myLocalBranchName
+    Get Full Project(from master branch) : git pull --rebase origin master
+
+
+git branch <branchname> (create New Branch)    || git checkout -b <branchname>  (checkout Branch)
+git add <nameOfYourFile>
+git commit -m "Added new features"
+git push origin <branchname>
+
+
 
 
 ################### Maven ###################

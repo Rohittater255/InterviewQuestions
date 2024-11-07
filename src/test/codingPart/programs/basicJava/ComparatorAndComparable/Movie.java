@@ -1,4 +1,4 @@
-package codingPart.programs.ComparatorAndComparable;
+package codingPart.programs.basicJava.ComparatorAndComparable;
 
 public class Movie implements Comparable<Movie> {
 
