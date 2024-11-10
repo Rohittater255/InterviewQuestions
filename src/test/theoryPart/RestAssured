@@ -19,6 +19,11 @@ Think of it as a blueprint that defines what your JSON data should look like,
 
 7) What is swagger?
 
+8) which library is used by Restasssured internally?
+    REST-assured internally uses the Apache HTTP Client library. This library is robust
+     and suitable for both simple and advanced use cases when testing HTTP endpoints
+
+
 
 #### types of authentication in api ####
 

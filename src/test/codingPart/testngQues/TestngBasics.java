@@ -1,7 +1,9 @@
 package codingPart.testngQues;
 
+import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 public class TestngBasics {
 
@@ -32,7 +34,7 @@ public class TestngBasics {
     public void A() {
         String A = "A";
         System.out.println("A " + A);
-        // Assert.assertEquals(2,3);
+        Assert.assertEquals(2, 3);
     }
 
 
@@ -58,6 +60,22 @@ public class TestngBasics {
         String a = "a";
 //        RestAssured.config().sslConfig(new SSLConfig().trustStore("").keyStore(""));
         // Customize connection and socket timeouts
+    }
+
+
+    @Test
+    public void hardAssert() {
+        Assert.assertEquals(2, 3);
+    }
+
+    @Test
+    public void softAssert() {
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertEquals(1, 5,"Actual 1 & Expected 5");
+        softAssert.assertEquals(5, 5,"Actual 5 & Expected 5");
+        softAssert.assertEquals(5, 5);
+        softAssert.assertEquals(5, 5);
+        softAssert.assertAll();
     }
 
 }

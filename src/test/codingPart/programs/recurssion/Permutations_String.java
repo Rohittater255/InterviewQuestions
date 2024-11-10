@@ -2,7 +2,7 @@ package codingPart.programs.recurssion;
 
 import java.util.ArrayList;
 
-public class StringSequence {
+public class Permutations_String {
 
     public static int count=0;
     public static ArrayList<String> list= new ArrayList<>();

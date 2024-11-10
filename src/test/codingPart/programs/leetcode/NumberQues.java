@@ -1,4 +1,4 @@
-package codingPart.programs;
+package codingPart.programs.leetcode;
 
 import org.testng.annotations.Test;
 

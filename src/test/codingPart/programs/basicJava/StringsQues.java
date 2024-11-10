@@ -148,17 +148,39 @@ public class StringsQues {
         StringBuilder sb = new StringBuilder();
         int count = 1;
 
-        for (int i = 0; i < s.length()  ; i++) {
+        for (int i = 0; i < s.length(); i++) {
             if (i + 1 < s.length() && s.charAt(i) == s.charAt(i + 1)) {
                 count++;
             } else {
                 sb.append(s.charAt(i)).append(count);
-                count =1;
+                count = 1;
             }
 
 
         }
-        System.out.println("New String "+sb);
+        System.out.println("New String " + sb);
+
+    }
+
+    @Test(description = "String Compresion")
+    public void compressString() {
+        String str = "aabbcccddde";
+        System.out.println("str:- "+ str);
+        StringBuilder compressed = new StringBuilder();
+        int count = 0;
+        for (int i = 0; i < str.length(); i++) {
+            System.out.println("Running for "+i+ " for char "+ str.charAt(i));
+            count++;
+            // If the next character is different or we've reached the end of the string
+            if (i + 1 == str.length() || str.charAt(i) != str.charAt(i + 1)) {
+                System.out.println("Adding for "+i);
+                compressed.append(str.charAt(i)).append(count);
+                count = 0; // Reset count for the next character
+            }
+        }
+
+
+        System.out.println(compressed);
 
     }
 }

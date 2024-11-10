@@ -4,6 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.devtools.DevTools;
+import org.openqa.selenium.devtools.v128.browser.Browser;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -11,6 +14,8 @@ import org.testng.annotations.Test;
 
 import java.io.File;
 import java.time.Duration;
+import java.util.List;
+import java.util.Optional;
 
 public class UploadAndDownloadFile {
 
@@ -27,6 +32,28 @@ public class UploadAndDownloadFile {
         driver.close();
     }
 
+    @Test()
+    public void downloadFile2() {
+
+
+        ChromeOptions options = new ChromeOptions();
+        //Enable Downloads
+        options.setEnableDownloads(true);
+        // Set download directory
+        String downloadFilePath = "C:\\Automation\\InterviewQuestions";
+        options.addArguments("download.default_directory=" + downloadFilePath);
+
+        ChromeDriver driver1 = new ChromeDriver(options);
+
+        // Enable downloads using DevTools Protocol
+        DevTools devTools = driver1.getDevTools();
+        devTools.createSession();
+//        devTools.send(Browser.setDownloadBehavior(Browser.SetDownloadBehaviorBehavior.ALLOW, Optional.of(downloadFilePath)));
+
+        driver1.get("https://get.jenkins.io/windows-stable/2.426.1/jenkins.msi");
+        List<String> l= driver1.getDownloadableFiles();
+        System.out.println("getDownloadableFiles"+l.size());
+    }
 
     //Refer https://www.youtube.com/watch?v=Qb3EZYGnono
     @Test(enabled = false)
@@ -57,7 +84,7 @@ public class UploadAndDownloadFile {
 
     }
 
-    @Test
+    @Test(enabled = false)
     public void uploadFile() {
         driver.get("https://practice.expandtesting.com/upload");
         //Click choose file

@@ -94,6 +94,7 @@ String js2 ="arguments[0].setAttribute('value','aa')";
     By: class
     Select: class
     Alert: Interface
+    JavascriptExecutor: Interface
 
 5) Topmost interface in Selenium: SearchContext
 

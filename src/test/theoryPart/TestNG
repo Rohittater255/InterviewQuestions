@@ -13,3 +13,8 @@
 12) Assert.assertEquals()  vs  Assert.assertEqualsDeep()
 13) Assert.assertEquals() vs Assert.assertSame()
 
+Advanced
+14) why assertion is error not exception?
+15) assertAll Method in Soft assertions?
+16) how hard and soft assertions work internally?
+  = SoftAssertions are basically hard assertions with try ctach block

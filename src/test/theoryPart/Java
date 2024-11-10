@@ -71,6 +71,8 @@ readResolve() is a method in Java used in the context of serialization.
  that the object being deserialized is replaced with another object.
  This is particularly useful for maintaining the singleton property or ensuring
  unique instances after deserialization.
+
+
 ############# Strings #############
 
 1) what is String pool?
@@ -84,6 +86,12 @@ System.out.println((s1 == s3)+", String are not equal."); // false
 System.out.println((s1 == s4)+", String are equal."); // true
 
 2) Why is String Immutable
+
+3) what is generics?
+    Generics are a powerful feature in Java that allow you to define classes, interfaces,
+    and methods with a placeholder for a type that will be specified later.
+     This makes your code more flexible and type-safe, enabling you to work with different
+     data types without the need for casting and with fewer runtime errors.
 
 
 ############# Memory Management #############

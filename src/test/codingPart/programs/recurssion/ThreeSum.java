@@ -1,5 +1,7 @@
 package codingPart.programs.recurssion;
 
+import codingPart.programs.basicJava.annotions.Information;
+
 import java.util.*;
 
 public class ThreeSum {
@@ -10,7 +12,7 @@ public class ThreeSum {
         int[] nums = {-1, 0, 1, 2, -1, -4};
         Arrays.sort(nums);
         Set<List<Integer>> result = new HashSet<>();
-        findTriplets(nums, result, new ArrayList<>(), 0, 0);
+        findTriplets(nums, result, new ArrayList<>(), 0, -4);
 //        Set<List<Integer>> triplets = threeSum(nums);
 //        for (List<Integer> triplet : triplets) {
 //            System.out.println(triplet);
