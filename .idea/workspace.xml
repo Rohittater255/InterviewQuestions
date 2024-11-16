@@ -1,0 +1,692 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c7fd9673-6ca2-4da8-8c4b-ec4b6f5407b3" name="Changes" comment="Update">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaProgrammingQuestions.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rohit_1727620710682_.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/downloaded_file" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/codingPart/programs/basicJava/CollectionImp/Collections_practice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/codingPart/programs/basicJava/operatorsQues.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/codingPart/programs/leetcode/TwoSum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/codingPart/programs/basicJava/Collections_practice.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/codingPart/programs/leetcode/HappyNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/codingPart/programs/leetcode/HappyNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/codingPart/programs/leetcode/Q3_TwoSums.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/codingPart/programs/leetcode/Q3_TwoSums.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/codingPart/programs/leetcode/reverseLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/codingPart/programs/leetcode/reverseLinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/theoryPart/Java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/theoryPart/Java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="AnnotationType" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Rohittater255&quot;
+  }
+}</component>
+  <component name="GitRewordedCommitMessages">
+    <option name="commitMessagesMapping">
+      <RewordedCommitMessageMapping>
+        <option name="originalMessage" value="Update" />
+        <option name="rewordedMessage" value="Updat" />
+      </RewordedCommitMessageMapping>
+    </option>
+    <option name="currentCommit" value="1" />
+    <option name="onto" value="37337169c125b64bb0b1a13b560e9ecad7a182ed" />
+  </component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Rohittater255/InterviewQuestions.git&quot;,
+    &quot;accountId&quot;: &quot;7ae33f41-4b0b-45f7-bdeb-04a99f6e46cf&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$MAVEN_REPOSITORY$/org/apache/poi/poi-ooxml-lite/5.2.2/poi-ooxml-lite-5.2.2.jar!/org/openxmlformats/schemas/spreadsheetml/x2006/main/WorkbookDocument.class" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/testng/testng/7.5/testng-7.5.jar!/org/testng/SuiteRunnerWorker.class" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenRunner">
+    <option name="skipTests" value="true" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2mk4r8PqTePvYarpp4WGj8PbpRU" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.AnnotationsTest.executor": "Run",
+    "Application.EnumExample.executor": "Run",
+    "Application.Factorial.executor": "Run",
+    "Application.Fibonacci.executor": "Run",
+    "Application.HappyNumber.executor": "Run",
+    "Application.LinearSearch.executor": "Run",
+    "Application.MethodOverload_MethodOveride.executor": "Run",
+    "Application.Reflection.executor": "Run",
+    "Application.ReflectionExample.executor": "Run",
+    "Application.SortedArray.executor": "Run",
+    "Application.StringSequence.executor": "Run",
+    "Application.Subset.executor": "Run",
+    "Application.SumOfDigits.executor": "Run",
+    "Application.TestClass.executor": "Run",
+    "Application.ThreeSum.executor": "Run",
+    "Application.ThreeSumRecursive.executor": "Run",
+    "Application.a.executor": "Run",
+    "Cucumber Java.Feature: Order.executor": "Run",
+    "Cucumber Java.Feature: Search.executor": "Run",
+    "Cucumber Java.Scenario: User Seaches.executor": "Run",
+    "Cucumber Java.Scenario: User Searches for various brands -  - Example n°1.executor": "Run",
+    "JUnit.StreamsQues.executor": "Run",
+    "JUnit.StreamsQues.filter.executor": "Run",
+    "JUnit.StreamsQues.flatMap.executor": "Run",
+    "JUnit.StreamsQues.limit.executor": "Run",
+    "JUnit.StreamsQues.list.executor": "Run",
+    "JUnit.StreamsQues.list_distinct.executor": "Run",
+    "JUnit.StreamsQues.list_sort.executor": "Run",
+    "JUnit.StreamsQues.mapToDouble.executor": "Run",
+    "JUnit.StreamsQues.mapToInteger.executor": "Run",
+    "JUnit.StreamsQues.multipleOperations.executor": "Run",
+    "JUnit.StreamsQues.noActionIsPerformedIfOutputOperationIsNotPerfomred.executor": "Run",
+    "JUnit.StreamsQues.peek.executor": "Run",
+    "JUnit.StreamsQues.skip.executor": "Run",
+    "JUnit.StreamsQues.waysToCreateStream.executor": "Run",
+    "Maven.JavaProgrammingQuestions [clean,deploy].executor": "Run",
+    "Maven.JavaProgrammingQuestions [clean,install].executor": "Run",
+    "Maven.JavaProgrammingQuestions [clean,validate].executor": "Run",
+    "Maven.JavaProgrammingQuestions [clean].executor": "Run",
+    "Maven.JavaProgrammingQuestions [deploy].executor": "Run",
+    "Maven.JavaProgrammingQuestions [install].executor": "Run",
+    "Maven.JavaProgrammingQuestions [validate...].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "TestNG.AddStringAndIntegers.sum_DifferentBase.executor": "Run",
+    "TestNG.ArrayListQues.a.executor": "Run",
+    "TestNG.ArrayListQues.findCommonElements_3Arrays.executor": "Run",
+    "TestNG.ArrayListQues.findCount (1).executor": "Run",
+    "TestNG.ArrayListQues.findCount.executor": "Run",
+    "TestNG.ArrayListQues.findUniqueDuplicate.executor": "Run",
+    "TestNG.ArrayQues.executor": "Run",
+    "TestNG.ArrayQues.findLargestNumber.executor": "Run",
+    "TestNG.ArrayQues.mergeSortedArrays.executor": "Run",
+    "TestNG.ArrayQues.permutations.executor": "Run",
+    "TestNG.ArrayQues.sortArray.executor": "Run",
+    "TestNG.BiDi_CDP.bidi.executor": "Run",
+    "TestNG.BiDi_CDP.executor": "Run",
+    "TestNG.BitQues.executor": "Run",
+    "TestNG.BitQues.integerToBit.executor": "Run",
+    "TestNG.BitQues.integerToBit2.executor": "Run",
+    "TestNG.BitQues.integerToHex.executor": "Run",
+    "TestNG.C:/Automation/InterviewQuestions/testng.xml.executor": "Run",
+    "TestNG.C:/Automation/InterviewQuestions/testng_cucumber.xml.executor": "Run",
+    "TestNG.CharacterQues.countNumberofDigitsinString.executor": "Run",
+    "TestNG.CodeForExceptions.exampleOfNullPointerException.executor": "Run",
+    "TestNG.CodeForExceptions.executor": "Run",
+    "TestNG.CollectionImpTest.executor": "Run",
+    "TestNG.CollectionImpTest.stack.executor": "Run",
+    "TestNG.Collections_Set.executor": "Run",
+    "TestNG.Collections_practice.arraylist.executor": "Run",
+    "TestNG.Collections_practice.executor": "Run",
+    "TestNG.Collections_practice.hashset.executor": "Run",
+    "TestNG.Collections_practice.linkedHashset.executor": "Run",
+    "TestNG.Collections_practice.map.executor": "Run",
+    "TestNG.Collections_practice.treeSet.executor": "Run",
+    "TestNG.Collections_practice.vector.executor": "Run",
+    "TestNG.DispappearingElements.executor": "Run",
+    "TestNG.DispappearingElements.handleDisappearingElement.executor": "Run",
+    "TestNG.Elements.executor": "Run",
+    "TestNG.Elements.tooltip.executor": "Debug",
+    "TestNG.ExampleForExceptions (1).executor": "Run",
+    "TestNG.ExampleForExceptions.exampleOfArithmeticException.executor": "Run",
+    "TestNG.ExampleForExceptions.exampleOfClassNotFoundException.executor": "Run",
+    "TestNG.ExampleForExceptions.exampleOfHandle_NullPointerException.executor": "Run",
+    "TestNG.ExampleForExceptions.exampleOfIllegalStateException.executor": "Run",
+    "TestNG.ExampleForExceptions.exampleOfNoClassDefFoundError.executor": "Run",
+    "TestNG.ExampleForExceptions.exampleOfNullPointerException.executor": "Run",
+    "TestNG.ExampleForExceptions.exampleOfNumberFormatException.executor": "Run",
+    "TestNG.ExampleForExceptions.example_ConcurrentModificationException.executor": "Run",
+    "TestNG.ExampleForExceptions.executor": "Run",
+    "TestNG.ExcelUtils (1).executor": "Run",
+    "TestNG.ExcelUtils (2).executor": "Run",
+    "TestNG.ExcelUtils.executor": "Run",
+    "TestNG.ExcelUtils.ty.executor": "Run",
+    "TestNG.ExceptionHandling2.a.executor": "Run",
+    "TestNG.ExceptionHandling2.executor": "Run",
+    "TestNG.HappyNumber.HappyNumber.executor": "Run",
+    "TestNG.HappyNumber.executor": "Run",
+    "TestNG.Interactions (1).executor": "Run",
+    "TestNG.Interactions.draggable.executor": "Run",
+    "TestNG.Interactions.executor": "Debug",
+    "TestNG.Java8Features.feature2_StreamAPI.executor": "Run",
+    "TestNG.LambdaFunctions.executor": "Run",
+    "TestNG.LambdaFunctions.predicate.executor": "Run",
+    "TestNG.LongestCommonPrefix.executor": "Run",
+    "TestNG.LongestCommonPrefix.preferredApproach2.executor": "Run",
+    "TestNG.MouseAndKeyBoardActions.executor": "Run",
+    "TestNG.NotificationPop.executor": "Debug",
+    "TestNG.NumberQues.executor": "Run",
+    "TestNG.NumberQues.factorial.executor": "Run",
+    "TestNG.NumberQues.fibonacci.executor": "Run",
+    "TestNG.NumberQues.reverseDigits.executor": "Run",
+    "TestNG.NumberQues.sumOfDigits.executor": "Run",
+    "TestNG.NumbersQues.strobogrammatic.executor": "Run",
+    "TestNG.Q3_TwoSums.a.executor": "Run",
+    "TestNG.RecordExample.a.executor": "Run",
+    "TestNG.RecordExample.executor": "Run",
+    "TestNG.ReflectionExample.executor": "Run",
+    "TestNG.ReflectionExample.updatePrivateConstructor.executor": "Run",
+    "TestNG.ReflectionExample.updatePrivateMethod.executor": "Run",
+    "TestNG.Regex.removeSpecialCharacters.executor": "Run",
+    "TestNG.RequestSpec_ResponseSpec.executor": "Run",
+    "TestNG.RequestSpec_ResponseSpec.runGet.executor": "Run",
+    "TestNG.RestAssuredFramework.executor": "Run",
+    "TestNG.RestAssuredFramework.jsonObject.executor": "Run",
+    "TestNG.RestAssuredFramework.runGetAndDownloadFile.executor": "Run",
+    "TestNG.RestAssuredFramework.setSSL.executor": "Run",
+    "TestNG.RestAssuredPractice.executor": "Run",
+    "TestNG.RestAssuredPractice.jsonObject2.executor": "Run",
+    "TestNG.RestAssuredPractice.runGetRequestWithParameter.executor": "Run",
+    "TestNG.SeleniumAlerts.executor": "Run",
+    "TestNG.SeleniumAlertsAndPopups.executor": "Run",
+    "TestNG.SeleniumAlertsAndPopups.handleAlertWithAuthPop.executor": "Run",
+    "TestNG.SeleniumBasics.openBrowserAndCheckBrokenLinks.executor": "Run",
+    "TestNG.SeleniumFramework.executor": "Run",
+    "TestNG.SingletonTest.singleton1_test (1).executor": "Run",
+    "TestNG.SingletonTest.singleton1_test (2).executor": "Run",
+    "TestNG.SingletonTest.singleton1_test.executor": "Run",
+    "TestNG.SingletonTest.singleton_clonetest.executor": "Run",
+    "TestNG.Sorting.executor": "Run",
+    "TestNG.Sorting.sortArray.executor": "Run",
+    "TestNG.Sorting.sortArrayList.executor": "Run",
+    "TestNG.Sorting.sortMap.executor": "Run",
+    "TestNG.StackTest.test.executor": "Run",
+    "TestNG.Strings.executor": "Run",
+    "TestNG.Strings.findIndex.executor": "Run",
+    "TestNG.Strings.replaceMultipleSpaces (1).executor": "Run",
+    "TestNG.Strings.replaceMultipleSpaces.executor": "Run",
+    "TestNG.StringsQues.compressString.executor": "Run",
+    "TestNG.StringsQues.differentRegex.executor": "Run",
+    "TestNG.StringsQues.executor": "Run",
+    "TestNG.StringsQues.getOTP.executor": "Run",
+    "TestNG.StringsQues.getSpecificPatternFromString.executor": "Run",
+    "TestNG.StringsQues.removeSpecialCharacters.executor": "Run",
+    "TestNG.StringsQues.replaceMultipleSpaces.executor": "Run",
+    "TestNG.StringsQues.reverse2.executor": "Run",
+    "TestNG.StringsQues.stringCompressionAlgorithm.executor": "Run",
+    "TestNG.TestRunner.executor": "Run",
+    "TestNG.TestngBasics.executor": "Run",
+    "TestNG.TestngBasics.noClassDefFoundError.executor": "Run",
+    "TestNG.TestngBasics.softAssert.executor": "Run",
+    "TestNG.TimeZoneTesting.executor": "Run",
+    "TestNG.TimeZoneTesting.timeZoneTest.executor": "Run",
+    "TestNG.UploadAndDownloadFile (1).executor": "Run",
+    "TestNG.UploadAndDownloadFile.downloadFile.executor": "Run",
+    "TestNG.UploadAndDownloadFile.downloadFile2.executor": "Run",
+    "TestNG.UploadAndDownloadFile.executor": "Run",
+    "TestNG.Widgets.executor": "Run",
+    "TestNG.WiremockPractice.WM_Mappimg_1.executor": "Run",
+    "TestNG.WiremockPractice.executor": "Run",
+    "TestNG.WiremockPractice.loadWiremockMappingFromJsonFiles.executor": "Debug",
+    "TestNG.WiremockPractice_StartingWiremockServerFromJavaCode.wiremockEndToEnd.executor": "Run",
+    "TestNG.WiremockPractice_StubbingFromJavaCode.executor": "Run",
+    "TestNG.WiremockPractice_StubbingFromJavaCode.loadWiremockMappingFromJavaCode.executor": "Run",
+    "TestNG.WiremockPractice_StubbingFromJsonFile (1).executor": "Run",
+    "TestNG.WiremockPractice_StubbingFromJsonFile.executor": "Run",
+    "TestNG.WiremockPractice_StubbingFromJsonFile.loadWiremockMappingFromJsonFiles (1).executor": "Debug",
+    "TestNG.WiremockPractice_StubbingFromJsonFile.loadWiremockMappingFromJsonFiles.executor": "Run",
+    "TestNG.handleRetry (1).executor": "Run",
+    "TestNG.handleRetry.apiResponse.executor": "Run",
+    "TestNG.handleRetry.executor": "Run",
+    "TestNG.operatorsQues (1).executor": "Run",
+    "TestNG.operatorsQues.adding.executor": "Run",
+    "TestNG.operatorsQues.bitwise.executor": "Run",
+    "TestNG.operatorsQues.bitwise2.executor": "Run",
+    "TestNG.operatorsQues.executor": "Run",
+    "TestNG.operatorsQues.leftShift.executor": "Run",
+    "TestNG.operatorsQues.rightShift.executor": "Run",
+    "TestNG.validateComaratorAndComparable.comparable.executor": "Run",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Automation/InterviewQuestions",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "terminal"
+  }
+}]]></component>
+  <component name="Push.Settings">
+    <force-push-targets>
+      <force-push-target remote-path="origin" branch="main" />
+    </force-push-targets>
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="codingPart.programs.recurssion" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Automation\InterviewQuestions" />
+      <recent name="C:\Automation\InterviewQuestions\src\test\resources" />
+      <recent name="C:\Automation\InterviewQuestions\src\test\theoryPart" />
+      <recent name="C:\Automation\InterviewQuestions\src\test\codingPart\restassuredQues\mappings\multiStubbing" />
+      <recent name="C:\Automation\InterviewQuestions\src\test\codingPart\restassuredQues\mappings" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Automation\InterviewQuestions\src\test\resources\features" />
+      <recent name="C:\Automation\InterviewQuestions" />
+      <recent name="C:\Automation\InterviewQuestions\src\test\codingPart\wiremock" />
+      <recent name="C:\Automation\InterviewQuestions\src\test\codingPart\restassuredQues\mappings\singleStubbing" />
+      <recent name="C:\Automation\InterviewQuestions\src\test\codingPart\restassuredQues" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="codingPart.programs.recurssion" />
+      <recent name="codingPart.restassuredQues" />
+    </key>
+  </component>
+  <component name="RunManager" selected="TestNG.operatorsQues.adding">
+    <configuration name="operatorsQues (1)" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="JavaProgrammingQuestions" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="codingPart.programs.basicJava.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="codingPart.programs.basicJava" />
+      <option name="MAIN_CLASS_NAME" value="codingPart.programs.basicJava.operatorsQues" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="operatorsQues" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="JavaProgrammingQuestions" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="codingPart.programs.basicJava.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="codingPart.programs.basicJava" />
+      <option name="MAIN_CLASS_NAME" value="codingPart.programs.basicJava.operatorsQues" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="operatorsQues.adding" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="JavaProgrammingQuestions" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="codingPart.programs.basicJava.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="codingPart.programs.basicJava" />
+      <option name="MAIN_CLASS_NAME" value="codingPart.programs.basicJava.operatorsQues" />
+      <option name="METHOD_NAME" value="adding" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="operatorsQues.leftShift" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="JavaProgrammingQuestions" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="codingPart.programs.basicJava.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="codingPart.programs.basicJava" />
+      <option name="MAIN_CLASS_NAME" value="codingPart.programs.basicJava.operatorsQues" />
+      <option name="METHOD_NAME" value="leftShift" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="operatorsQues.rightShift" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="JavaProgrammingQuestions" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="codingPart.programs.basicJava.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="codingPart.programs.basicJava" />
+      <option name="MAIN_CLASS_NAME" value="codingPart.programs.basicJava.operatorsQues" />
+      <option name="METHOD_NAME" value="rightShift" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.operatorsQues.adding" />
+        <item itemvalue="TestNG.operatorsQues.rightShift" />
+        <item itemvalue="TestNG.operatorsQues.leftShift" />
+        <item itemvalue="TestNG.operatorsQues (1)" />
+        <item itemvalue="TestNG.operatorsQues" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c7fd9673-6ca2-4da8-8c4b-ec4b6f5407b3" name="Changes" comment="" />
+      <created>1727607436327</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1727607436327</updated>
+    </task>
+    <task id="LOCAL-00001" summary="A">
+      <created>1727609088849</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1727609088849</updated>
+    </task>
+    <task id="LOCAL-00002" summary="B">
+      <created>1727618187068</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1727618187068</updated>
+    </task>
+    <task id="LOCAL-00003" summary="UPdates">
+      <created>1727806145697</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1727806145697</updated>
+    </task>
+    <task id="LOCAL-00004" summary="UPdates">
+      <created>1727806155488</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1727806155488</updated>
+    </task>
+    <task id="LOCAL-00005" summary="UPdates">
+      <created>1727809069179</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1727809069179</updated>
+    </task>
+    <task id="LOCAL-00006" summary="UPdates">
+      <created>1727811561316</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1727811561316</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Update">
+      <created>1727850533200</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1727850533200</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Update">
+      <created>1727870101325</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1727870101325</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Update">
+      <option name="closed" value="true" />
+      <created>1728499898646</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1728499898646</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Update">
+      <option name="closed" value="true" />
+      <created>1728569158966</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1728569158967</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Update">
+      <option name="closed" value="true" />
+      <created>1728571444362</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1728571444362</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Update">
+      <option name="closed" value="true" />
+      <created>1728571450537</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1728571450537</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Update">
+      <option name="closed" value="true" />
+      <created>1728571778983</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1728571778983</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Update">
+      <option name="closed" value="true" />
+      <created>1729156170638</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1729156170638</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Update">
+      <option name="closed" value="true" />
+      <created>1729263640578</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1729263640578</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Update">
+      <option name="closed" value="true" />
+      <created>1729367371980</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1729367371980</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Update">
+      <option name="closed" value="true" />
+      <created>1729879648308</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1729879648308</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Update">
+      <option name="closed" value="true" />
+      <created>1729879673155</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1729879673155</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Update">
+      <option name="closed" value="true" />
+      <created>1729976291052</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1729976291052</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Update">
+      <option name="closed" value="true" />
+      <created>1729976308441</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1729976308441</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Update">
+      <option name="closed" value="true" />
+      <created>1730313152407</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1730313152407</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Update">
+      <option name="closed" value="true" />
+      <created>1730460259174</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1730460259174</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Update">
+      <option name="closed" value="true" />
+      <created>1731006001340</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1731006001340</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Update">
+      <option name="closed" value="true" />
+      <created>1731264646852</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1731264646852</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
+    <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="docker-compose.yaml" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="50e0c627-b94c-4964-9e24-eaaec8792cb5" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="50e0c627-b94c-4964-9e24-eaaec8792cb5">
+          <value>
+            <State />
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="A" />
+    <MESSAGE value="B" />
+    <MESSAGE value="UPdates" />
+    <MESSAGE value="Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/codingPart/seleniumQues/tutorialPoints/Interactions.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/codingPart/seleniumQues/tutorialPoints/Widgets.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/codingPart/seleniumQues/tutorialPoints/Widgets.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/codingPart/seleniumQues/tutorialPoints/Interactions.java</url>
+          <line>70</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/codingPart/seleniumQues/UploadAndDownloadFile.java</url>
+          <line>93</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/codingPart/programs/basicJava/StringsQues.java</url>
+          <line>105</line>
+          <properties class="codingPart.programs.basicJava.StringsQues" method="getSpecificPatternFromString">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

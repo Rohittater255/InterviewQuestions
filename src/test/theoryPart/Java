@@ -50,8 +50,12 @@ They typically have private fields with public getter and setter methods.
 
 10) keywords
 a) this vs super
+  - The this keyword is used to refer to the current instance of the class in which it is used.
+  - The super keyword is used to refer to the immediate parent class of the current class.
 b) private, default, public, protected
-c) volatile
+c) volatile: The volatile keyword in Java is used to indicate that a variable's value will be modified by different threads.
+ Declaring a variable as volatile ensures that changes made to it by one thread are immediately visible to other threads.
+ This prevents the Java Memory Model (JMM) from caching the variable and guarantees that the most up-to-date value is always read.
 d ) synchronized : The synchronized keyword in Java is used to control access to a block of code or method by multiple threads. 
 It ensures that only one thread can execute the synchronized code at a time, preventing race conditions and ensuring thread safety. 
 
