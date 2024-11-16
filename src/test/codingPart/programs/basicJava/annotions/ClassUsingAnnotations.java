@@ -1,4 +1,4 @@
-package codingPart.programs.basicJava.annotions;
+package test.codingPart.programs.basicJava.annotions;
 
 @Information(drop = "23")
 public class ClassUsingAnnotations {

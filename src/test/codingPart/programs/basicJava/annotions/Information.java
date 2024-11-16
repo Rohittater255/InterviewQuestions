@@ -1,4 +1,4 @@
-package codingPart.programs.basicJava.annotions;
+package test.codingPart.programs.basicJava.annotions;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

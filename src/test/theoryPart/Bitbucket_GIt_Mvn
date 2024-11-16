@@ -2,8 +2,9 @@
 
 1) Diff between workspace, project and repository
 2) Move/Transfer Repo from one bitbucket account
-  In Bitbucket, Go To Repository Settings--> Manage repository-->Transfer Repository. Enter Workspace name and click on transfer
-  Refer https://www.youtube.com/watch?v=SS-jG0Ke3Dg
+  1) In Bitbucket, Go To Repository Settings--> Manage repository-->Transfer Repository. Enter Workspace name and click on transfer
+    Refer https://www.youtube.com/watch?v=SS-jG0Ke3Dg
+  2) open Project, click on Fork
 3) Handle merge conflict
   - Take code from your branch--> git clone yorrepo...
   - Rebase code from master branch--> git rebase origin/main
