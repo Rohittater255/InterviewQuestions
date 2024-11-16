@@ -1,4 +1,4 @@
-package codingPart.wiremock;
+package test.codingPart.wiremock;
 
 import com.github.tomakehurst.wiremock.client.WireMock;
 import io.restassured.RestAssured;

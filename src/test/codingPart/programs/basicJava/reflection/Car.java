@@ -1,4 +1,4 @@
-package codingPart.programs.basicJava.reflection;
+package test.codingPart.programs.basicJava.reflection;
 
 //Suppose class have 2 variables, with getters and setters.
 // The private String have dont have setter method.

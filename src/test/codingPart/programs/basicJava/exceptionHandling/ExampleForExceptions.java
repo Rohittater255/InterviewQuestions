@@ -1,4 +1,4 @@
-package codingPart.programs.basicJava.exceptionHandling;
+package test.codingPart.programs.basicJava.exceptionHandling;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

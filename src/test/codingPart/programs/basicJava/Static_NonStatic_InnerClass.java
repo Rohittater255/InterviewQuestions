@@ -1,4 +1,4 @@
-package codingPart.programs.basicJava;
+package test.codingPart.programs.basicJava;
 
 public class Static_NonStatic_InnerClass {
 

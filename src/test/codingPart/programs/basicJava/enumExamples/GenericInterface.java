@@ -1,4 +1,4 @@
-package codingPart.programs.basicJava.enumExamples;
+package test.codingPart.programs.basicJava.enumExamples;
 
 public interface GenericInterface {
 

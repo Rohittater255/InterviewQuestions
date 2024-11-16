@@ -1,4 +1,4 @@
-package codingPart.programs.basicJava.Java8Features;
+package test.codingPart.programs.basicJava.Java8Features;
 
 import org.junit.jupiter.api.Test;
 

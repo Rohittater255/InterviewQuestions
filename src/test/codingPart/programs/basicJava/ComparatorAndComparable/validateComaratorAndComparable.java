@@ -1,4 +1,4 @@
-package codingPart.programs.basicJava.ComparatorAndComparable;
+package test.codingPart.programs.basicJava.ComparatorAndComparable;
 
 import org.testng.annotations.Test;
 

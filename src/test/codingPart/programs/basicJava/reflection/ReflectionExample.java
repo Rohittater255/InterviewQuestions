@@ -1,4 +1,4 @@
-package codingPart.programs.basicJava.reflection;
+package test.codingPart.programs.basicJava.reflection;
 
 import org.testng.annotations.Test;
 

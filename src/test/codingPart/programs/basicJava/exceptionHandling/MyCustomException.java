@@ -1,4 +1,4 @@
-package codingPart.programs.basicJava.exceptionHandling;
+package test.codingPart.programs.basicJava.exceptionHandling;
 
 public class MyCustomException extends Exception {
 

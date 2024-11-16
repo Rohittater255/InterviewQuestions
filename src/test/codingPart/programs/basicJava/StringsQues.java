@@ -1,4 +1,4 @@
-package codingPart.programs.basicJava;
+package test.codingPart.programs.basicJava;
 
 import org.testng.annotations.Test;
 
