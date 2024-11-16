@@ -1,4 +1,4 @@
-package codingPart.programs.recurssion;
+package test.codingPart.programs.recurssion;
 
 public class SortedArray {
 

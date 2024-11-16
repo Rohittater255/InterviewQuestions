@@ -1,4 +1,4 @@
-package codingPart.seleniumQues;
+package test.codingPart.seleniumQues;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;

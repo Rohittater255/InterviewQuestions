@@ -1,4 +1,4 @@
-package codingPart.seleniumQues;
+package test.codingPart.seleniumQues;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;

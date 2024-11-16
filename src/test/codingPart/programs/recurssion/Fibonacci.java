@@ -1,4 +1,4 @@
-package codingPart.programs.recurssion;
+package test.codingPart.programs.recurssion;
 
 import java.util.HashMap;
 import java.util.Map;

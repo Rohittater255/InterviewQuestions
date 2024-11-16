@@ -1,4 +1,4 @@
-package codingPart.cucumber;
+package test.codingPart.cucumber;
 
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;

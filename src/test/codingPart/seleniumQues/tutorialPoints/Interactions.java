@@ -1,4 +1,4 @@
-package codingPart.seleniumQues.tutorialPoints;
+package test.codingPart.seleniumQues.tutorialPoints;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;

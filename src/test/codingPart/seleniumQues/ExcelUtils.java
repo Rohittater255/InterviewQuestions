@@ -1,4 +1,4 @@
-package codingPart.seleniumQues;
+package test.codingPart.seleniumQues;
 
 import org.testng.annotations.Test;
 
