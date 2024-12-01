@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.v128.browser.Browser;
+
 import org.openqa.selenium.support.ui.FluentWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -65,23 +65,18 @@ public class UploadAndDownloadFile {
 
         File file = new File(downloadPath, fileName);
 
-        FluentWait<File> wait = new FluentWait<File>(file)
+        FluentWait<File> wait = new FluentWait<>(file)
                 .withTimeout(Duration.ofMinutes(5))
                 .pollingEvery(Duration.ofSeconds(2))
                 .ignoring(Exception.class).withMessage("file is not downloaded");
-
         try {
             boolean isDownloaded = wait.until(f -> f.exists() && f.canRead());
-
             if (isDownloaded) {
                 System.out.println("file is completely 100% downloaded");
             }
-
         } catch (TimeoutException e) {
             System.out.println("file is not completely  downloaded");
-
         }
-
     }
 
     @Test(enabled = false)
@@ -92,7 +87,5 @@ public class UploadAndDownloadFile {
 
         //click upload
         driver.findElement(By.xpath("//button[@id='fileSubmit']")).click();
-
-
     }
 }
